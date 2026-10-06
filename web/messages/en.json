@@ -14,7 +14,11 @@
     "language": "Language",
     "themeToLight": "Switch to light mode",
     "themeToDark": "Switch to dark mode",
-    "logo": "Carlos Conca, home"
+    "logo": "Carlos Conca, home",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "mobileBar": "Mobile navigation",
+    "mobileMenu": "Page menu"
   },
   "Categories": {
     "articulo-wos": "WoS articles",
@@ -56,9 +60,9 @@
     "placeholder": "Search by title, journal or collaborator…",
     "searchLabel": "Search publications",
     "category": "Category",
-    "allCategories": "All categories",
+    "allCategories": "Categories",
     "year": "Year",
-    "allYears": "All years",
+    "allYears": "Year",
     "sort": "Sort by",
     "sortRecent": "Most recent",
     "sortOldest": "Oldest first",
@@ -78,6 +82,8 @@
       "revista-nacional": "National journal",
       "otras": "Other",
       "libro": "Book"
-    }
+    },
+    "searchBar": "Search publication",
+    "countLabel": "{count} publications"
   }
 }

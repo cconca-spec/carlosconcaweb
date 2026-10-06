@@ -14,7 +14,11 @@
     "language": "Idioma",
     "themeToLight": "Cambiar a modo claro",
     "themeToDark": "Cambiar a modo oscuro",
-    "logo": "Carlos Conca, inicio"
+    "logo": "Carlos Conca, inicio",
+    "menu": "Menú",
+    "closeMenu": "Cerrar menú",
+    "mobileBar": "Navegación móvil",
+    "mobileMenu": "Menú de páginas"
   },
   "Categories": {
     "articulo-wos": "Artículos WoS",
@@ -56,9 +60,9 @@
     "placeholder": "Buscar por título, revista o colaborador…",
     "searchLabel": "Buscar publicaciones",
     "category": "Categoría",
-    "allCategories": "Todas las categorías",
+    "allCategories": "Categorías",
     "year": "Año",
-    "allYears": "Todos los años",
+    "allYears": "Año",
     "sort": "Ordenar",
     "sortRecent": "Más reciente",
     "sortOldest": "Menos reciente",
@@ -78,6 +82,8 @@
       "revista-nacional": "Revista nacional",
       "otras": "Otras",
       "libro": "Libro"
-    }
+    },
+    "searchBar": "Buscar publicación",
+    "countLabel": "{count} publicaciones"
   }
 }

@@ -11,11 +11,12 @@ import {
   type Publication,
   type SortKey,
 } from '@/lib/search/filter'
+import { useSearchQuery, setQuery as setStoreQuery } from '@/lib/search/query-store'
 import { PublicationCard } from './publication-card'
 
 const STEP = 24
 const FIELD =
-  'w-full rounded-pill border border-line bg-card px-3 py-2.5 text-[0.8125rem] text-fg sm:px-4 sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+  'w-full truncate rounded-pill border border-transparent bg-surface px-3 py-2.5 text-[0.8125rem] text-fg md:border-line md:bg-card md:px-4 md:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 
 function readUrl() {
   const p = new URLSearchParams(window.location.search)
@@ -37,7 +38,7 @@ function readUrl() {
  */
 export function PublicationsBrowser({ items }: { items: Publication[] }) {
   const t = useTranslations('Publications')
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useSearchQuery()
   const [category, setCategory] = useState<Category | ''>('')
   const [year, setYear] = useState<number | null>(null)
   const [sort, setSort] = useState<SortKey>('recent')
@@ -45,6 +46,9 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
   const ready = useRef(false)
 
   const deferredQuery = useDeferredValue(query)
+
+  // El texto vive en un store compartido con la barra inferior mobile: se limpia al salir.
+  useEffect(() => () => setStoreQuery(''), [])
 
   // Estado inicial desde la URL, leída una sola vez tras hidratar: el HTML del
   // servidor no puede conocerla (la página es estática), así que no hay otra forma.
@@ -57,7 +61,7 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
     setSort(u.sort)
     /* eslint-enable react-hooks/set-state-in-effect */
     ready.current = true
-  }, [])
+  }, [setQuery])
 
   // Refleja el estado en la URL sin navegar.
   useEffect(() => {
@@ -117,8 +121,9 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
 
   return (
     <div>
-      <div role="search" className="grid grid-cols-2 gap-3 lg:grid-cols-[2fr_1fr_1fr_1fr]">
-        <div className="col-span-2 lg:col-span-1">
+      <div role="search" className="grid grid-cols-[1.1fr_0.7fr_1.2fr] gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        {/* En mobile el buscador vive en la barra inferior (mobile-chrome). */}
+        <div className="hidden md:col-span-3 md:block lg:col-span-1">
           <label htmlFor="pub-q" className="sr-only">
             {t('searchLabel')}
           </label>
@@ -170,7 +175,7 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
           </select>
         </div>
 
-        <div className="col-span-2 lg:col-span-1">
+        <div>
           <label htmlFor="pub-sort" className="sr-only">
             {t('sort')}
           </label>

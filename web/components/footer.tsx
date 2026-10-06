@@ -51,7 +51,7 @@ export async function Footer({ locale }: { locale: Locale }) {
     <footer
       data-nav-tone="light"
       aria-label={t('nav')}
-      className="px-[var(--gutter)] pt-[clamp(2rem,5vw,6rem)] pb-6"
+      className="px-[var(--gutter)] pt-[clamp(2rem,5vw,6rem)] pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-6"
     >
       <div className="grid grid-cols-1 gap-[clamp(2rem,4vw,4rem)] lg:grid-cols-2">
         <div className="flex flex-col justify-between gap-12 rounded-card bg-card p-[clamp(1.5rem,2.5vw,2.5rem)]">

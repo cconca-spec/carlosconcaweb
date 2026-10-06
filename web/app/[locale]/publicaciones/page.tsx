@@ -30,6 +30,7 @@ export default async function Page({ params }: PageProps<'/[locale]/publicacione
   const locale = raw as Locale
   setRequestLocale(locale)
 
+  const tp = await getTranslations({ locale, namespace: 'Publications' })
   const [page, rows, t] = await Promise.all([
     getPublicacionesPage(locale),
     getPublications(),
@@ -69,11 +70,14 @@ export default async function Page({ params }: PageProps<'/[locale]/publicacione
     <main>
       <section
         data-nav-tone="dark"
-        className="bg-tl-bg px-[var(--gutter)] pt-[calc(var(--nav-h)+clamp(2rem,5vw,4.5rem))] pb-[clamp(2rem,5vw,4.5rem)] text-paper-50"
+        className="flex min-h-[34svh] items-end justify-between gap-4 bg-tl-bg px-[var(--gutter)] pt-[calc(var(--nav-h)+clamp(2rem,5vw,4.5rem))] pb-[clamp(1.5rem,5vw,4.5rem)] text-paper-50 md:block md:min-h-0"
       >
         <h1 className="text-[clamp(2.25rem,4.4vw,4.25rem)] leading-tight font-normal tracking-tight">
           {page?.heading ?? t('publications')}
         </h1>
+        <p aria-label={tp('countLabel', { count: items.length })} className="text-[clamp(1.25rem,5vw,1.75rem)] tabular-nums md:hidden">
+          {items.length}
+        </p>
       </section>
 
       <section className="px-[var(--gutter)] py-[clamp(2rem,5vw,4.5rem)]">
