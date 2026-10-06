@@ -33,6 +33,43 @@ export const homePage = defineType({
       validation: (Rule) => Rule.max(4),
     }),
     defineField({
+      name: 'areasIntro',
+      title: 'Áreas de investigación: introducción',
+      type: 'text',
+      rows: 4,
+      description: 'Párrafo que aparece bajo el título "Áreas de investigación" en la página de inicio.',
+    }),
+    defineField({
+      name: 'researchAreas',
+      title: 'Áreas de investigación (tarjetas del inicio)',
+      type: 'array',
+      description:
+        'Cada área es una tarjeta en la página de inicio. Al hacer clic se abre una ventana a pantalla completa con el texto. Se muestran en este orden.',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Nombre del área',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'body',
+              title: 'Texto',
+              type: 'text',
+              rows: 8,
+              description: 'Lo que se lee al abrir el área. Separa los párrafos con una línea en blanco.',
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+          preview: { select: { title: 'title' } },
+        }),
+      ],
+      validation: (Rule) => Rule.max(6),
+    }),
+    defineField({
       name: 'timeline',
       title: 'Timeline destacado',
       type: 'array',

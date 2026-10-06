@@ -209,5 +209,38 @@
     "Timeline: reparto de párrafos por década inferido de las fechas del texto (1·2·2·2·2·1); confirmar.",
     "Timeline EN: las bajadas (caption) están en español en el WP (\"Formación\", …). Se copiaron tal cual; traducir.",
     "Retrato: no se carga (la imagen del hero es un fondo del tema). Subirlo desde el Studio."
+  ],
+  "areasIntro": "His area of ​​expertise is the mathematical analysis of systems modeled by partial differential equations, originating in the natural sciences and engineering sciences, particularly fluid mechanics, solid physics, and engineering. Specifically:",
+  "researchAreas": [
+    {
+      "_key": "area1",
+      "title": "Homogenization",
+      "body": "In his doctoral thesis, he used a family of exponential functions, products of a standard plane wave and a periodic function (known as Bloch waves), to homogenize a mathematical model of solid-fluid interaction. He subsequently continued to develop the use of these waves in various models of partial differential equations, leading to the Bloch method in homogenization theory (Appl. Math. Optim. 18, 1-38, 1988 & SIAM J. Appl. Math. 57, 1639-1659, 1997). It is a dual (Fourier-type) method to the usual strategies for studying elliptic operators with highly oscillating coefficients."
+    },
+    {
+      "_key": "area2",
+      "title": "Fluids",
+      "body": "In one of the chapters of his state thesis, he demonstrated existence and uniqueness results for incompressible evolutionary Stokes and Navier-Stokes systems with nonstandard boundary conditions, in particular, with conditions on Cauchy pressure and stress. Originally, these results were published in French as a chapter in the book “Nonlinear Partial Differential Equations and their Applications”, vol. IX, H. Brezis & J.-L. Lions eds., Longman Scientific & Technical, Harlow (1988); a foundational article according to Google AI, and later translated into English (Japan. J. Math. 20, 279-318, 1994). The most relevant mathematical results obtained generalize the classical theorems of J. Leray, O. Ladyzhenskaya and J.-L. Lions, to the case in which the classical bilinear form “gradient-gradient” is replaced by the form “rot-rot” in the variational formulation"
+    },
+    {
+      "_key": "area3",
+      "title": "Solid-Fluid Type Structures",
+      "body": "These investigations date from the early 1980s; they were carried out in collaboration with EDF-France, a world pioneer in the theoretical and experimental study of this type of structure (circa 1935). The topic was approached from a different perspective than that of the EDF engineer-researchers, proposing a new family of mathematical models (inspired by homogenization). The localization and distribution theorems of stable and unstable modes related to these models led to a theoretical justification of a resonance phenomenon (of mechanical origin) observed in the steam condensers of EDF power plants (Comput. Methods Appl. Mech. Engrg. 69, 215–242, 1988). After forming new teams, particularly with J. San Martín and M. Tucsnak, he tackled the study of the motion of a rigid body immersed in a viscous fluid. In the case of a nonlinear coupling, they proved weak “well-possedness” of the coupling: there is a maximum time T*>0, dichotomous, either T* = + ∞ (existence of a global time solution), or, when we approach T*, the body necessarily ends up colliding with the edge of the container (Comm. Partial Diff. Eqns. 25, 1019–1042, 2000)"
+    },
+    {
+      "_key": "area4",
+      "title": "Optimal Design",
+      "body": "Their main interest in this topic revolves around an original question posed by F. Murat and L. Tartar (doi: 10.1007/978-3-319-97184-1_6) concerning how to distribute two homogeneous materials, in a priori fixed proportions, in a region of Euclidean space, so as to minimize a mechanical criterion, for example, the first eigenvalue of the resulting mixture. The underlying conjecture is the existence of a classical solution that does not involve homogenized mixtures."
+    },
+    {
+      "_key": "area5",
+      "title": "Inverse problems",
+      "body": "His work has focused on geometric inverse problems, specifically on recovering information about a static rigid body (unknown) immersed in a fluid confined within a region of space (Inverse Problems 21, 1531-1552, 2005); a foundational article according to Google AI. He later generalized the results to the case of a moving inclusion interacting with the fluid. His interest in applications later led him to explore the sense of smell in humans, proposing new inverse mathematical models to determine the spatial distribution of ion channels by measuring the electrical activity produced by depolarization."
+    },
+    {
+      "_key": "area6",
+      "title": "Collaborative research in other areas",
+      "body": "Since the creation of the ICDB (in 2006), Carlos has initiated new collaborative research in various areas of natural sciences and engineering, using mathematics to model and analyze phenomena in biochemistry, genetics, epidemiology, and other fields. The result of his interaction with diverse research groups has been the training of doctoral and master’s students and the publication of articles in scientific journals such as: PLoS ONE; PLoS Negl. Trop. Dis.; Bioinform. Comput. Bio.; mBio; Front. Nutr.; Chaos, Solitons & Fractals; Frontiers in Public Health; Science of the Total Environment; Front. Cell. Infect. Microbiol.; Biotech. Adv.; and Nonlinear Oscillations (see his list of publications for more details)."
+    }
   ]
 }

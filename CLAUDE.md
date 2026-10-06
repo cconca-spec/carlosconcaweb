@@ -127,8 +127,8 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    y secciones. Tema: oscuro por `prefers-color-scheme` en CSS (sin `<script>`: React 19 lo
    rechaza al cambiar de idioma), `ThemeSync` aplica la elección guardada, `.dark`/`.light`
    la fuerzan. `components/navbar/` (glass adaptativa: las secciones declaran
-   `data-nav-tone="light|dark"`), `hero.tsx`, `career-stats.tsx` (home hasta "Carrera académica").
-   Pendiente: seguir con las demás secciones de la home (timeline, áreas, footer…), páginas
+   `data-nav-tone="light|dark"`), `hero.tsx`, `career-stats.tsx`, `footer.tsx` (en el layout; los textos legales quedan sin enlace hasta hacer esas páginas, al final) y `research-areas.tsx` + `research-areas-grid.tsx` (6 tarjetas → `<dialog>` fullscreen con cursor ×; textos en `homePage.researchAreas`, ilustraciones en `public/images/areas/`; falta `pnpm --filter studio deploy` para que el Studio muestre los campos nuevos).
+   Pendiente: seguir con las demás secciones de la home (timeline…), páginas
    internas, dark mode del logo FCFM, mobile. No inventar lo que el usuario no explicó.
 4. Las páginas (`web/app/[locale]/**/page.tsx`) son stubs que solo muestran un `<h1>`;
    los datos ya se leen con las funciones de `web/lib/sanity/fetch.ts`.

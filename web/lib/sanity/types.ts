@@ -436,6 +436,12 @@ export type HomePage = {
     label?: string;
     _key: string;
   }>;
+  areasIntro?: string;
+  researchAreas?: Array<{
+    title?: string;
+    body?: string;
+    _key: string;
+  }>;
   timeline?: Array<{
     decade?: string;
     caption?: string;
@@ -654,6 +660,12 @@ export type HOME_PAGE_QUERY_RESULT = {
   stats?: Array<{
     value?: string;
     label?: string;
+    _key: string;
+  }>;
+  areasIntro?: string;
+  researchAreas?: Array<{
+    title?: string;
+    body?: string;
     _key: string;
   }>;
   timeline?: Array<{

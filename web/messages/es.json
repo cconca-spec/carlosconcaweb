@@ -31,7 +31,11 @@
   "Home": {
     "careerTitle": "Carrera académica",
     "scientific": "Publicaciones Científicas",
-    "mathPhysics": "Publicaciones Matemáticas y Física-Matemática"
+    "mathPhysics": "Publicaciones Matemáticas y Física-Matemática",
+    "areasTitle": "Áreas de investigación",
+    "viewPublications": "Ver Publicaciones",
+    "closeArea": "Cerrar",
+    "areasList": "Áreas de investigación"
   },
   "Footer": {
     "title": "Carlos Conca",

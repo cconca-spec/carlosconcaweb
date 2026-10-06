@@ -208,5 +208,38 @@
     "Stats: el WP muestra 4 tarjetas pero los contadores animados no se pueden leer del HTML; solo se extrajeron las cifras fijas. Falta la tarjeta de publicaciones (el WP dice 198, la migración tiene 197).",
     "Timeline: reparto de párrafos por década inferido de las fechas del texto (1·2·2·2·2·1); confirmar.",
     "Retrato: no se carga (la imagen del hero es un fondo del tema). Subirlo desde el Studio."
+  ],
+  "areasIntro": "Su dominio de experticia es el análisis matemático de sistemas modelados por ecuaciones en derivadas parciales, con origen en ciencias naturales y ciencias de la ingeniería, en particular la mecánica de fluidos, física de sólidos e ingeniería. Específicamente:",
+  "researchAreas": [
+    {
+      "_key": "area1",
+      "title": "Homogeneización",
+      "body": "En su tesis de estado utilizó un tipo de familia de funciones exponenciales, productos de una onda plana estándar por una función periódica (conocidas como ondas de Bloch), en la homogeneización de un modelo matemático de interacción del tipo sólido-fluido. Posteriormente, continuó desarrollando el uso de estas ondas en diversos modelos de ecuaciones en derivadas parciales, dando lugar al método de Bloch en teoría de homogeneización (Appl. Math. Optim. 18, 1-38, 1988 & SIAM J. Appl. Math. 57, 1639-1659, 1997). Es un método dual (de tipo Fourier) a las estrategias usuales para el estudio de operadores elípticos con coeficientes altamente oscilantes"
+    },
+    {
+      "_key": "area2",
+      "title": "Fluidos",
+      "body": "En uno de los capítulos de su tesis de estado demostró resultados de existencia y unicidad para los sistemas evolutivos de Stokes y de Navier-Stokes incompresibles con condiciones de borde no estándares, en particular, con condiciones sobre la presión y los esfuerzos de Cauchy. Originalmente, estos resultados fueron publicados en francés, como un capítulo del libro “Nonlinear Partial Differential Equations and their Applications”, vol. IX, H. Brezis & J.-L. Lions eds., Longman Scientific & Technical, Harlow (1988); artículo fundacional según Google AI, y más tarde, traducido al inglés (Japan. J. Math. 20, 279-318, 1994). Los resultados matemáticos más relevantes obtenidos generalizan los teoremas clásicos de J. Leray, O. Ladyzhenskaya y J.-L. Lions, al caso en que la clásica forma bilineal “gradiente-gradiente” es reemplazada por la forma “rot-rot” en la formulación variacional"
+    },
+    {
+      "_key": "area3",
+      "title": "Estructuras del tipo Sólido-Fluidos",
+      "body": "Estas investigaciones datan de comienzos de la década de los 80; fueron realizadas en colaboración con la empresa EDF-France, pionera a nivel mundial en el estudio teórico y experimental de este tipo de estructuras (hacia 1935). El tema lo abordó en una perspectiva diferente a la de los ingenieros-investigadores EDF, proponiendo una nueva familia de modelos matemáticos (inspirados en homogeneización). Los teoremas de localización y distribución de modos estables e inestables relativos a estos modelos dieron lugar a una justificación teórica de un fenómeno de resonancia (de origen mecánico) observado en los condensadores de vapor de las centrales de EDF (Comput. Methods Appl. Mech. Engrg. 69, 215– 242, 1988). Tras formar nuevos equipos, en particular con J. San Martín y M. Tucsnak, abordó el estudio del movimiento de un cuerpo rígido inmerso en un fluido viscoso. En el caso de un acoplamiento no lineal, probaron “well-possedness” débil del acoplamiento: existe un tiempo máximo T*>0, dicotómico, o bien, T* = + ∞ (existencia de una solución global en tiempo), o bien, cuando nos acercamos a T*, el cuerpo necesariamente termina colisionando con el borde del contenedor (Comm. Partial Diff. Eqns. 25, 1019–1042, 2000)"
+    },
+    {
+      "_key": "area4",
+      "title": "Diseño Óptimo",
+      "body": "Su principal interés en este tema gira en torno a una pregunta original de F. Murat y L. Tartar (doi: 10.1007/978-3-319-97184-1_6) sobre cómo distribuir dos materiales homogéneos, en proporciones fijas a priori, en una región del espacio euclideo, de modo de minimizar un criterio mecánico, por ejemplo, el primer autovalor de la mezcla resultante. La conjetura subyacente es la existencia de una solución clásica que no involucre mezclas homogeneizadas"
+    },
+    {
+      "_key": "area5",
+      "title": "Problemas inversos",
+      "body": "Sus trabajos se han focalizado en problemas inversos geométricos, y precisamente, en recuperar información sobre un sólido rígido estático (desconocido), inmerso en un fluido confinado en una región del espacio (Inverse Problems 21, 1531-1552, 2005); artículo fundacional según Google AI, generalizando posteriormente los resultados al caso de una inclusión en movimiento, e interactuando con el fluido. Su interés por las aplicaciones lo llevó, más tarde, a explorar el sentido del olfato en humanos, proponiendo nuevos modelos matemáticos inversos para determinar la distribución espacial de los canales iónicos, midiendo la actividad eléctrica producida por depolarización"
+    },
+    {
+      "_key": "area6",
+      "title": "Investigación asociativa en otras áreas",
+      "body": "Desde la creación del ICDB (el año 2006), Carlos inició nuevo trabajo de investigación asociativa en diversas áreas de las ciencias naturales y de la ingeniería, utilizando la matemática para modelar y analizar fenomenología en bioquímica, génética, epidemiología, y otros campos. El resultado de su interacción con diversos grupos de investigación ha sido la formación de estudiantes (de doctorado y magister) y la publicación de artículos en revistas científicas tales como: PLoS ONE; PLoS Negl. Trop. Dis.; Bioinform. Comput. Bio.; mBio; Front. Nutr.; Chaos, Solitons & Fractals; Frontiers in Public Health; Science of the Total Environment; Front. Cell. Infect. Microbiol.; Biotech. Adv.; Nonlinear Oscillations (véase su lista de publicaciones, para más detalles)"
+    }
   ]
 }

@@ -25,6 +25,8 @@
   --surface: #f7f7f7;
   --fg: #1c1c1c;
   --accent: #1c1c1c;
+  /* Fondo de las ilustraciones de áreas (viene incrustado en los PNG). */
+  --art: #262626;
   --border: color-mix(in srgb, #1c1c1c 35%, transparent);
 
   /* Glass (vidrio esmerilado) para header y otros elementos. */
@@ -71,6 +73,7 @@
   --color-surface: var(--surface);
   --color-fg: var(--fg);
   --color-accent: var(--accent);
+  --color-art: var(--art);
   --color-line: var(--border);
   --color-glass-light: var(--glass-light);
   --color-glass-dark: var(--glass-dark);
