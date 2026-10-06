@@ -14,21 +14,21 @@ export async function Hero({
   return (
     <section
       data-nav-tone="light"
-      className="flex min-h-svh px-[var(--gutter)] pt-[calc(var(--nav-h)+1rem)] pb-[clamp(1rem,2vw,1.5rem)]"
+      className="flex min-h-svh px-[var(--gutter)] pt-[calc(var(--nav-h)+1rem)] pb-[clamp(1rem,2vw,1.5rem)] max-md:min-h-0 max-md:px-0 max-md:pt-0"
     >
-      <div className="grid w-full flex-1 grid-cols-1 gap-[clamp(1rem,1.5vw,1.5rem)] lg:grid-cols-2">
-        <div className="relative min-h-[22rem] overflow-hidden rounded-card">
+      <div className="grid w-full flex-1 grid-cols-1 gap-[clamp(1rem,1.5vw,1.5rem)] max-md:gap-0 lg:grid-cols-2">
+        <div className="relative min-h-[22rem] overflow-hidden rounded-card max-md:h-[50svh] max-md:min-h-0 max-md:rounded-t-none max-md:rounded-b-[2.5rem]">
           <Image
             src="/images/carlos-conca-background.jpg"
             alt={t('photoAlt')}
             fill
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
+            className="object-cover max-md:object-[62%_30%]"
           />
         </div>
 
-        <div className="flex flex-col justify-between gap-12 rounded-card bg-panel p-[clamp(1.5rem,4vw,4.5rem)]">
+        <div className="flex flex-col justify-between gap-12 rounded-card bg-panel p-[clamp(1.5rem,4vw,4.5rem)] max-md:relative max-md:z-10 max-md:-mt-10 max-md:mx-[var(--gutter)]">
           <Reveal delay={0.1}>
             <Image
               src="/logos/logo-fcfm-2.png"
