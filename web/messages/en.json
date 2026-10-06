@@ -18,7 +18,8 @@
     "menu": "Menu",
     "closeMenu": "Close menu",
     "mobileBar": "Mobile navigation",
-    "mobileMenu": "Page menu"
+    "mobileMenu": "Page menu",
+    "quickSwitch": "Quick page switch"
   },
   "Categories": {
     "articulo-wos": "WoS articles",

@@ -18,7 +18,8 @@
     "menu": "Menú",
     "closeMenu": "Cerrar menú",
     "mobileBar": "Navegación móvil",
-    "mobileMenu": "Menú de páginas"
+    "mobileMenu": "Menú de páginas",
+    "quickSwitch": "Cambio rápido de página"
   },
   "Categories": {
     "articulo-wos": "Artículos WoS",

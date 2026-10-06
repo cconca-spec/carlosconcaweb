@@ -8,6 +8,7 @@ import { cn } from '@/lib/cn'
 import { useDark, useHydrated } from '@/lib/use-dark'
 import { ThemeToggle } from '../theme-toggle'
 import { LocaleSwitch } from './locale-switch'
+import { DesktopPill } from './desktop-pill'
 import { MobileChrome } from './mobile-chrome'
 import { NAV_ITEMS as ITEMS } from './nav-items'
 import { useNavTone } from './use-nav-tone'
@@ -78,6 +79,7 @@ export function Navbar() {
         </div>
       </header>
     <MobileChrome />
+      <DesktopPill />
     </>
   )
 }
