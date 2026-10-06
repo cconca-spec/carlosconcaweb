@@ -84,6 +84,9 @@
       "libro": "Libro"
     },
     "searchBar": "Buscar publicación",
-    "countLabel": "{count} publicaciones"
+    "countLabel": "{count} publicaciones",
+    "viewMode": "Vista",
+    "viewGrid": "Ver como tarjetas",
+    "viewList": "Ver como lista"
   }
 }

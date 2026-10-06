@@ -84,6 +84,9 @@
       "libro": "Book"
     },
     "searchBar": "Search publication",
-    "countLabel": "{count} publications"
+    "countLabel": "{count} publications",
+    "viewMode": "View",
+    "viewGrid": "Card view",
+    "viewList": "List view"
   }
 }

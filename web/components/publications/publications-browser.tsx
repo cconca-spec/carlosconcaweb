@@ -12,6 +12,7 @@ import {
   type SortKey,
 } from '@/lib/search/filter'
 import { useSearchQuery, setQuery as setStoreQuery } from '@/lib/search/query-store'
+import { cn } from '@/lib/cn'
 import { PublicationCard } from './publication-card'
 
 const STEP = 24
@@ -28,6 +29,18 @@ function readUrl() {
     cat: cat && CATEGORIES.includes(cat) ? cat : ('' as const),
     year: Number.isInteger(year) && year > 0 ? year : null,
     sort: sort && SORT_KEYS.includes(sort) ? sort : ('recent' as const),
+    layout: p.get('view') === 'list' ? ('list' as const) : p.get('view') === 'grid' ? ('grid' as const) : null,
+  }
+}
+
+type Layout = 'grid' | 'list'
+const LAYOUT_KEY = 'pub-view'
+
+function storedLayout(): Layout {
+  try {
+    return localStorage.getItem(LAYOUT_KEY) === 'list' ? 'list' : 'grid'
+  } catch {
+    return 'grid'
   }
 }
 
@@ -42,6 +55,7 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
   const [category, setCategory] = useState<Category | ''>('')
   const [year, setYear] = useState<number | null>(null)
   const [sort, setSort] = useState<SortKey>('recent')
+  const [layout, setLayout] = useState<Layout>('grid')
   const [visible, setVisible] = useState(STEP)
   const ready = useRef(false)
 
@@ -59,6 +73,7 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
     setCategory(u.cat)
     setYear(u.year)
     setSort(u.sort)
+    setLayout(u.layout ?? storedLayout())
     /* eslint-enable react-hooks/set-state-in-effect */
     ready.current = true
   }, [setQuery])
@@ -71,9 +86,10 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
     if (category) p.set('cat', category)
     if (year !== null) p.set('year', String(year))
     if (sort !== 'recent') p.set('sort', sort)
+    if (layout === 'list') p.set('view', 'list')
     const qs = p.toString()
     window.history.replaceState(null, '', window.location.pathname + (qs ? `?${qs}` : ''))
-  }, [query, category, year, sort])
+  }, [query, category, year, sort, layout])
 
   const years = useMemo(
     () => [...new Set(items.map((p) => p.year))].sort((a, b) => b - a),
@@ -111,6 +127,13 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
   const onCategory = change(setCategory)
   const onYear = change(setYear)
   const onSort = change(setSort)
+
+  function chooseLayout(next: Layout) {
+    setLayout(next)
+    try {
+      localStorage.setItem(LAYOUT_KEY, next)
+    } catch {}
+  }
 
   function clear() {
     setQuery('')
@@ -192,8 +215,9 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
         </div>
       </div>
 
-      <p className="mt-6 text-sm text-fg/70" aria-live="polite">
-        {t('showing', { shown, total: results.length })}
+      <div className="mt-6 flex items-center justify-between gap-3">
+        <p className="text-sm text-fg/70" aria-live="polite">
+          {t('showing', { shown, total: results.length })}
         {filtered && (
           <>
             {' · '}
@@ -204,15 +228,54 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
         )}
       </p>
 
+        <div
+          role="group"
+          aria-label={t('viewMode')}
+          className="flex shrink-0 gap-1 rounded-pill bg-surface p-1 md:hidden"
+        >
+          <button
+            type="button"
+            aria-pressed={layout === 'grid'}
+            aria-label={t('viewGrid')}
+            onClick={() => chooseLayout('grid')}
+            className={cn('grid size-8 place-items-center rounded-pill', layout === 'grid' && 'bg-fg text-bg')}
+          >
+            <svg viewBox="0 0 16 16" className="size-4" fill="currentColor" aria-hidden>
+              <rect x="2" y="2" width="5" height="5" rx="1" />
+              <rect x="9" y="2" width="5" height="5" rx="1" />
+              <rect x="2" y="9" width="5" height="5" rx="1" />
+              <rect x="9" y="9" width="5" height="5" rx="1" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            aria-pressed={layout === 'list'}
+            aria-label={t('viewList')}
+            onClick={() => chooseLayout('list')}
+            className={cn('grid size-8 place-items-center rounded-pill', layout === 'list' && 'bg-fg text-bg')}
+          >
+            <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+              <path d="M2 4h12M2 8h12M2 12h12" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
       {results.length === 0 && <p className="mt-10 text-lg">{t('empty')}</p>}
 
-      <ul className="mt-4 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <ul
+        className={cn(
+          'mt-4 grid gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4',
+          layout === 'list' ? 'grid-cols-1 gap-2' : 'grid-cols-2',
+        )}
+      >
         {results.map((p, i) => (
           <PublicationCard
             key={p.id}
             pub={p}
             hidden={i >= visible}
             deferred={i >= 8}
+            list={layout === 'list'}
             labels={{
               chip: chips[p.category],
               view,

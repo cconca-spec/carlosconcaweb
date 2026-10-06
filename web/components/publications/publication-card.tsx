@@ -36,19 +36,28 @@ export const PublicationCard = memo(function PublicationCard({
   labels,
   hidden,
   deferred,
+  list,
 }: {
   pub: Publication
   labels: CardLabels
   hidden: boolean
   deferred: boolean
+  /** Fila compacta (solo mobile): categoría, año, título y botón al final. */
+  list: boolean
 }) {
   return (
     <li
       hidden={hidden}
-      className={cn(deferred && '[contain-intrinsic-size:auto_17rem] [content-visibility:auto]')}
+      className={cn(deferred && (list ? '[contain-intrinsic-size:auto_5.5rem]' : '[contain-intrinsic-size:auto_17rem]'),
+        deferred && '[content-visibility:auto]')}
     >
-      <article className="flex h-full flex-col gap-2 rounded-card bg-card p-3 sm:gap-3 sm:p-5">
-        <header className="flex items-start justify-between gap-2">
+      <article
+        className={cn(
+          'flex h-full flex-col gap-2 rounded-card bg-card p-3 sm:gap-3 sm:p-5',
+          list && 'max-md:grid max-md:grid-cols-[1fr_auto] max-md:items-center max-md:gap-x-3 max-md:gap-y-1.5 max-md:px-4 max-md:py-3',
+        )}
+      >
+        <header className={cn('flex items-start justify-between gap-2', list && 'max-md:col-start-1 max-md:row-start-1')}>
           <span
             className={cn(
               'rounded-pill px-2 py-0.5 text-[0.6875rem] leading-tight font-medium sm:px-2.5 sm:py-1 sm:text-xs',
@@ -60,18 +69,33 @@ export const PublicationCard = memo(function PublicationCard({
           <span className="text-[0.6875rem] text-fg/60 tabular-nums sm:text-xs">{pub.year}</span>
         </header>
 
-        <h3 className="line-clamp-4 text-[0.9375rem] leading-snug font-medium sm:line-clamp-3 sm:text-xl">
+        <h3
+          className={cn(
+            'line-clamp-4 text-[0.9375rem] leading-snug font-medium sm:line-clamp-3 sm:text-xl',
+            list && 'max-md:col-start-1 max-md:row-start-2 max-md:line-clamp-2',
+          )}
+        >
           {pub.title}
         </h3>
 
-        <div className="flex flex-col gap-0.5 text-[0.6875rem] leading-snug text-fg/60 sm:text-xs">
+        <div
+          className={cn(
+            'flex flex-col gap-0.5 text-[0.6875rem] leading-snug text-fg/60 sm:text-xs',
+            list && 'max-md:hidden',
+          )}
+        >
           {pub.citation && <p className="line-clamp-2 sm:line-clamp-3">{pub.citation}</p>}
           {pub.collaborators && (
             <p className="line-clamp-2 italic">{labels.collaborators}</p>
           )}
         </div>
 
-        <div className="mt-auto pt-2">
+        <div
+          className={cn(
+            'mt-auto pt-2',
+            list && 'max-md:col-start-2 max-md:row-span-2 max-md:row-start-1 max-md:mt-0 max-md:self-center max-md:pt-0',
+          )}
+        >
           {pub.link ? (
             <a
               href={pub.link}
