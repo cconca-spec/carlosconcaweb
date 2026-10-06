@@ -104,5 +104,10 @@
   "Common": {
     "readMore": "Leer más",
     "readLess": "Leer menos"
+  },
+  "Investigacion": {
+    "applications": "Aplicaciones",
+    "keyPublications": "Publicaciones clave",
+    "areasTitle": "Áreas de investigación"
   }
 }
