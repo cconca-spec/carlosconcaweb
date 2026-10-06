@@ -927,7 +927,7 @@ export type CONTACTO_PAGE_QUERY_RESULT = {
 
 // Source: lib/sanity/queries.ts
 // Variable: SITE_SETTINGS_QUERY
-// Query: *[_id == $id && _type == "siteSettings"][0]
+// Query: *[_id == $id && _type == "siteSettings"][0]{  ...,  "cvUrl": cv.asset->url}
 export type SITE_SETTINGS_QUERY_RESULT = {
   _id: string;
   _type: "siteSettings";
@@ -952,6 +952,7 @@ export type SITE_SETTINGS_QUERY_RESULT = {
   };
   sameAs?: Array<string>;
   defaultSeo?: Seo;
+  cvUrl: string | null;
 } | null;
 
 // Query TypeMap
@@ -964,7 +965,7 @@ declare global {
     '*[_id == $id && _type == "docenciaPage"][0]': DOCENCIA_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "publicacionesPage"][0]': PUBLICACIONES_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "contactoPage"][0]': CONTACTO_PAGE_QUERY_RESULT;
-    '*[_id == $id && _type == "siteSettings"][0]': SITE_SETTINGS_QUERY_RESULT;
+    '*[_id == $id && _type == "siteSettings"][0]{\n  ...,\n  "cvUrl": cv.asset->url\n}': SITE_SETTINGS_QUERY_RESULT;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Zalando_Sans } from 'next/font/google'
 import { ThemeSync } from '@/components/theme-sync'
+import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar/navbar'
 import { routing } from '@/lib/i18n/routing'
 
@@ -42,6 +43,7 @@ export default async function LocaleLayout({
           <ThemeSync />
           <Navbar />
           {children}
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

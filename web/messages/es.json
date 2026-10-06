@@ -32,5 +32,17 @@
     "careerTitle": "Carrera académica",
     "scientific": "Publicaciones Científicas",
     "mathPhysics": "Publicaciones Matemáticas y Física-Matemática"
+  },
+  "Footer": {
+    "title": "Carlos Conca",
+    "logoAlt": "",
+    "rights": "Carlos Conca. Todos los derechos reservados",
+    "links": "Links",
+    "info": "Info",
+    "cv": "Descargar CV (En)",
+    "designedBy": "Diseñado por",
+    "privacy": "Políticas de privacidad",
+    "terms": "Términos y condiciones",
+    "nav": "Pie de página"
   }
 }
