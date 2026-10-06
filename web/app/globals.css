@@ -27,6 +27,9 @@
   --accent: #1c1c1c;
   /* Fondo de las ilustraciones de áreas (viene incrustado en los PNG). */
   --art: #262626;
+  /* Sección Timeline: oscura en ambos modos. */
+  --tl-bg: #393939;
+  --tl-card: #121212;
   --border: color-mix(in srgb, #1c1c1c 35%, transparent);
 
   /* Glass (vidrio esmerilado) para header y otros elementos. */
@@ -74,6 +77,8 @@
   --color-fg: var(--fg);
   --color-accent: var(--accent);
   --color-art: var(--art);
+  --color-tl-bg: var(--tl-bg);
+  --color-tl-card: var(--tl-card);
   --color-line: var(--border);
   --color-glass-light: var(--glass-light);
   --color-glass-dark: var(--glass-dark);

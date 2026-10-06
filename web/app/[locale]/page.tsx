@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { CareerStats } from '@/components/career-stats'
 import { Hero } from '@/components/hero'
 import { ResearchAreas } from '@/components/research-areas'
+import { Timeline } from '@/components/timeline'
 import type { Locale } from '@/lib/i18n/routing'
 import { getHomePage } from '@/lib/sanity/fetch'
 
@@ -24,6 +25,7 @@ export default async function Page({ params }: PageProps<'/[locale]'>) {
         intro={home?.areasIntro ?? ''}
         areas={home?.researchAreas ?? []}
       />
+      <Timeline timeline={home?.timeline ?? []} />
     </main>
   )
 }

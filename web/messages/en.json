@@ -35,7 +35,9 @@
     "areasTitle": "Research areas",
     "viewPublications": "View Publications",
     "closeArea": "Close",
-    "areasList": "Research areas"
+    "areasList": "Research areas",
+    "timelineTitle": "Featured timeline",
+    "viewBiography": "View biography"
   },
   "Footer": {
     "title": "Carlos Conca",
