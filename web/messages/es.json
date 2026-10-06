@@ -89,5 +89,20 @@
     "viewMode": "Vista",
     "viewGrid": "Ver como tarjetas",
     "viewList": "Ver como lista"
+  },
+  "Docencia": {
+    "chile": "Doctorados con posición académica en Chile",
+    "international": "Doctorados con posición académica internacional",
+    "engineers": "Ingenieros Civiles Matemáticos, Bioinformáticos y Magísteres",
+    "postdocs": "Post-doctorados supervisados",
+    "programs": "Programas co-fundados",
+    "count": "{count}"
+  },
+  "Biografia": {
+    "awards": "Reconocimientos y premios"
+  },
+  "Common": {
+    "readMore": "Leer más",
+    "readLess": "Leer menos"
   }
 }

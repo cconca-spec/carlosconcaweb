@@ -89,5 +89,20 @@
     "viewMode": "View",
     "viewGrid": "Card view",
     "viewList": "List view"
+  },
+  "Docencia": {
+    "chile": "PhDs with academic positions in Chile",
+    "international": "PhDs with international academic positions",
+    "engineers": "Civil Engineers, Mathematicians, Bioinformaticians and Masters",
+    "postdocs": "Supervised post-doctoral studies",
+    "programs": "Co-founded programs",
+    "count": "{count}"
+  },
+  "Biografia": {
+    "awards": "Recognitions and awards"
+  },
+  "Common": {
+    "readMore": "Read more",
+    "readLess": "Read less"
   }
 }

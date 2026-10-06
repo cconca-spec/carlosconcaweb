@@ -352,5 +352,6 @@
   "_review": [
     "Posición/país de cada doctorado: se separó el último tramo tras la coma como país; revisar que cada fila quedó bien.",
     "Doctorados en Chile, ingenieros/magísteres y enlace de genealogía: se agregaron campos nuevos al schema (doctoratesChile, engineers, genealogy)."
-  ]
+  ],
+  "statement": "Bajo la guía del Profesor Conca, 16 matemáticos obtuvieron su doctorado entre 1984 y 2025; además, ha guiado 27 tesis de ingeniería y magíster. Hoy ocupan posiciones en:"
 }

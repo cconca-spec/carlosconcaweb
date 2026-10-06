@@ -261,6 +261,7 @@ export type DocenciaPage = {
     _type: "block";
     _key: string;
   }>;
+  statement?: string;
   doctoratesChile?: Array<{
     name?: string;
     year?: string;
@@ -825,6 +826,7 @@ export type DOCENCIA_PAGE_QUERY_RESULT = {
     _type: "block";
     _key: string;
   }>;
+  statement?: string;
   doctoratesChile?: Array<{
     name?: string;
     year?: string;

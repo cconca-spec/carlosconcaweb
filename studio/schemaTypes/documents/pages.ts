@@ -218,6 +218,14 @@ export const docenciaPage = defineType({
     defineField({ name: 'eyebrow', title: 'Antetítulo', type: 'string' }),
     defineField({ name: 'intro', title: 'Introducción', type: 'array', of: [{ type: 'block' }] }),
     defineField({
+      name: 'statement',
+      title: 'Frase destacada',
+      type: 'text',
+      rows: 3,
+      description:
+        'Frase grande que abre la lista de doctorados e ingenieros. Ej: "Bajo la guía del Profesor Conca, 16 matemáticos obtuvieron su doctorado…".',
+    }),
+    defineField({
       name: 'doctoratesChile',
       title: 'Doctorados con posición académica en Chile',
       type: 'array',

@@ -352,5 +352,6 @@
   "_review": [
     "Posición/país de cada doctorado: se separó el último tramo tras la coma como país; revisar que cada fila quedó bien.",
     "Doctorados en Chile, ingenieros/magísteres y enlace de genealogía: se agregaron campos nuevos al schema (doctoratesChile, engineers, genealogy)."
-  ]
+  ],
+  "statement": "Under Professor Conca's guidance, 16 mathematicians earned their doctorates between 1984 and 2025; he has also supervised 27 engineering and master's theses. They currently hold positions in:"
 }

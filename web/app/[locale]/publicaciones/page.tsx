@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { PageHero } from '@/components/page-hero'
 import { PublicationsBrowser } from '@/components/publications/publications-browser'
-import { getPathname } from '@/lib/i18n/navigation'
 import type { Locale } from '@/lib/i18n/routing'
 import { getPublicacionesPage, getPublications } from '@/lib/sanity/fetch'
 import { buildHaystack, CATEGORIES, type Publication } from '@/lib/search/filter'
-import { doiFromLink, SITE_URL } from '@/lib/seo/site'
-
-const url = (locale: Locale) => SITE_URL + getPathname({ locale, href: '/publicaciones' })
+import { pageMetadata } from '@/lib/seo/metadata'
+import { doiFromLink } from '@/lib/seo/site'
 
 export async function generateMetadata({
   params,
@@ -15,14 +14,12 @@ export async function generateMetadata({
   const { locale } = (await params) as { locale: Locale }
   const page = await getPublicacionesPage(locale)
   const t = await getTranslations({ locale, namespace: 'Meta' })
-  return {
+  return pageMetadata({
+    locale,
+    href: '/publicaciones',
     title: page?.seo?.metaTitle ?? `${page?.heading ?? 'Publicaciones'} – ${t('siteName')}`,
     description: page?.seo?.metaDescription ?? t('description'),
-    alternates: {
-      canonical: url(locale),
-      languages: { es: url('es'), en: url('en'), 'x-default': url('es') },
-    },
-  }
+  })
 }
 
 export default async function Page({ params }: PageProps<'/[locale]/publicaciones'>) {
@@ -68,17 +65,17 @@ export default async function Page({ params }: PageProps<'/[locale]/publicacione
 
   return (
     <main>
-      <section
-        data-nav-tone="dark"
-        className="flex min-h-[34svh] items-end justify-between gap-4 bg-tl-bg px-[var(--gutter)] pt-[calc(var(--nav-h)+clamp(2rem,5vw,4.5rem))] pb-[clamp(1.5rem,5vw,4.5rem)] text-paper-50 md:block md:min-h-0"
-      >
-        <h1 className="text-[clamp(2.25rem,4.4vw,4.25rem)] leading-tight font-normal tracking-tight">
-          {page?.heading ?? t('publications')}
-        </h1>
-        <p aria-label={tp('countLabel', { count: items.length })} className="text-[clamp(1.25rem,5vw,1.75rem)] tabular-nums md:hidden">
-          {items.length}
-        </p>
-      </section>
+      <PageHero
+        title={page?.heading ?? t('publications')}
+        aside={
+          <p
+            aria-label={tp('countLabel', { count: items.length })}
+            className="text-[clamp(1.25rem,5vw,1.75rem)] tabular-nums md:hidden"
+          >
+            {items.length}
+          </p>
+        }
+      />
 
       <section className="px-[var(--gutter)] py-[clamp(2rem,5vw,4.5rem)]">
         <PublicationsBrowser items={items} />
