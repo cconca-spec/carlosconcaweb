@@ -50,5 +50,34 @@
     "privacy": "Políticas de privacidad",
     "terms": "Términos y condiciones",
     "nav": "Pie de página"
+  },
+  "Publications": {
+    "title": "Buscar publicaciones",
+    "placeholder": "Buscar por título, revista o colaborador…",
+    "searchLabel": "Buscar publicaciones",
+    "category": "Categoría",
+    "allCategories": "Todas las categorías",
+    "year": "Año",
+    "allYears": "Todos los años",
+    "sort": "Ordenar",
+    "sortRecent": "Más reciente",
+    "sortOldest": "Menos reciente",
+    "sortCategory": "Por categoría",
+    "listTitle": "Publicaciones",
+    "view": "Ver artículo",
+    "noLink": "Sin enlace disponible",
+    "loadMore": "Cargar más",
+    "showing": "Mostrando {shown} de {total}",
+    "empty": "No hay publicaciones que coincidan con la búsqueda.",
+    "clear": "Limpiar filtros",
+    "with": "con {names}",
+    "chip": {
+      "articulo-wos": "WoS-ISI",
+      "articulo-indexado": "Indexado",
+      "actas-capitulos": "Actas / Capítulos",
+      "revista-nacional": "Revista nacional",
+      "otras": "Otras",
+      "libro": "Libro"
+    }
   }
 }

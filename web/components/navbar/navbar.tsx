@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/lib/i18n/navigation'
 import { cn } from '@/lib/cn'
-import { useDark } from '@/lib/use-dark'
+import { useDark, useHydrated } from '@/lib/use-dark'
 import { ThemeToggle } from '../theme-toggle'
 import { LocaleSwitch } from './locale-switch'
 import { useNavTone } from './use-nav-tone'
@@ -24,6 +24,7 @@ export function Navbar() {
   const pathname = usePathname()
   const sectionTone = useNavTone()
   const siteDark = useDark()
+  const hydrated = useHydrated()
 
   // En modo oscuro del sitio la navbar siempre es oscura; en claro sigue a la sección.
   const dark = siteDark || sectionTone === 'dark'
@@ -50,7 +51,7 @@ export function Navbar() {
         <nav aria-label={t('primary')} className="hidden items-center gap-2 md:flex">
           <ul className="flex items-center gap-1">
             {ITEMS.map(({ href, key }) => {
-              const current = pathname === href
+              const current = hydrated && pathname === href
               const outline = key === 'contact'
               return (
                 <li key={key}>

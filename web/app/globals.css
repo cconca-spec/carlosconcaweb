@@ -37,6 +37,14 @@
   --glass-dark: color-mix(in srgb, #393939 78%, transparent);
   --glass-blur: 18px;
 
+  /* Chips de categoría de publicaciones. */
+  --cat-wos: #3452c9;
+  --cat-indexado: #1f7a4d;
+  --cat-actas: #a06a00;
+  --cat-nacional: #b3402e;
+  --cat-otras: #5b5b5b;
+  --cat-libro: #7a3fb0;
+
   --nav-h: 5rem;
   /* Margen lateral común: navbar y secciones comparten la misma línea. */
   --gutter: clamp(1rem, 4vw, 5rem);
@@ -54,10 +62,22 @@
     --fg: #f7f7f7;
     --accent: #f7f7f7;
     --border: color-mix(in srgb, #f7f7f7 35%, transparent);
+    --cat-wos: #8fa4ff;
+    --cat-indexado: #6fd3a0;
+    --cat-actas: #f0c04a;
+    --cat-nacional: #ff9b88;
+    --cat-otras: #bdbdbd;
+    --cat-libro: #c9a0f0;
     color-scheme: dark;
   }
 }
 .dark {
+  --cat-wos: #8fa4ff;
+  --cat-indexado: #6fd3a0;
+  --cat-actas: #f0c04a;
+  --cat-nacional: #ff9b88;
+  --cat-otras: #bdbdbd;
+  --cat-libro: #c9a0f0;
   --bg: #1c1c1c;
   --panel: #393939;
   --card: #393939;
@@ -77,6 +97,12 @@
   --color-fg: var(--fg);
   --color-accent: var(--accent);
   --color-art: var(--art);
+  --color-cat-wos: var(--cat-wos);
+  --color-cat-indexado: var(--cat-indexado);
+  --color-cat-actas: var(--cat-actas);
+  --color-cat-nacional: var(--cat-nacional);
+  --color-cat-otras: var(--cat-otras);
+  --color-cat-libro: var(--cat-libro);
   --color-tl-bg: var(--tl-bg);
   --color-tl-card: var(--tl-card);
   --color-line: var(--border);

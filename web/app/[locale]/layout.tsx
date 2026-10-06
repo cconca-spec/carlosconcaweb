@@ -6,6 +6,7 @@ import { Zalando_Sans } from 'next/font/google'
 import { ThemeSync } from '@/components/theme-sync'
 import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar/navbar'
+import { SITE_URL } from '@/lib/seo/site'
 import { routing } from '@/lib/i18n/routing'
 
 const zalando = Zalando_Sans({
@@ -25,7 +26,11 @@ export async function generateMetadata({
 }: LayoutProps<'/[locale]'>): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Meta' })
-  return { title: t('siteName'), description: t('description') }
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: t('siteName'),
+    description: t('description'),
+  }
 }
 
 export default async function LocaleLayout({

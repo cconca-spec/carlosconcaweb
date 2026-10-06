@@ -29,3 +29,14 @@ export function isDarkNow() {
 export function useDark() {
   return useSyncExternalStore(subscribe, isDarkNow, () => false)
 }
+
+const noop = () => () => {}
+
+/**
+ * false en el servidor y en el primer render de hidratación, true después.
+ * Sirve para lo que depende del cliente (p. ej. la ruta actual en páginas
+ * estáticas) sin provocar un desajuste de hidratación.
+ */
+export function useHydrated() {
+  return useSyncExternalStore(noop, () => true, () => false)
+}

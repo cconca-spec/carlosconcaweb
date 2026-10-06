@@ -50,5 +50,34 @@
     "privacy": "Privacy policy",
     "terms": "Terms and conditions",
     "nav": "Footer"
+  },
+  "Publications": {
+    "title": "Search publications",
+    "placeholder": "Search by title, journal or collaborator…",
+    "searchLabel": "Search publications",
+    "category": "Category",
+    "allCategories": "All categories",
+    "year": "Year",
+    "allYears": "All years",
+    "sort": "Sort by",
+    "sortRecent": "Most recent",
+    "sortOldest": "Oldest first",
+    "sortCategory": "By category",
+    "listTitle": "Publications",
+    "view": "View article",
+    "noLink": "No link available",
+    "loadMore": "Load more",
+    "showing": "Showing {shown} of {total}",
+    "empty": "No publications match your search.",
+    "clear": "Clear filters",
+    "with": "with {names}",
+    "chip": {
+      "articulo-wos": "WoS-ISI",
+      "articulo-indexado": "Indexed",
+      "actas-capitulos": "Proceedings / Chapters",
+      "revista-nacional": "National journal",
+      "otras": "Other",
+      "libro": "Book"
+    }
   }
 }
