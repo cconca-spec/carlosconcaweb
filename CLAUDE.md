@@ -119,19 +119,45 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    ver `.env.example`; el token se crea en sanity.io/manage → API → Tokens).
 2. `pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm test:routes`
    debe pasar antes de tocar nada.
-3. **Fase 3 (desktop) en curso (T5/T7)**. Línea visual explicada por el usuario: fondo claro
-   #f1f0ef (paneles #e6e6e6, tarjetas blancas), paleta #1c1c1c / #393939 / #f7f7f7, Zalando
-   Sans ≤600, glass en navbar, Framer Motion para entradas, radio de cards 20px.
-   Hecho: tokens en `web/app/globals.css` (semánticos `bg/panel/card/card-hover/surface/fg/
-   accent/line`; los componentes usan solo esos), `--gutter` = margen lateral común de navbar
-   y secciones. Tema: oscuro por `prefers-color-scheme` en CSS (sin `<script>`: React 19 lo
-   rechaza al cambiar de idioma), `ThemeSync` aplica la elección guardada, `.dark`/`.light`
-   la fuerzan. `components/navbar/` (glass adaptativa: las secciones declaran
-   `data-nav-tone="light|dark"`), `hero.tsx`, `career-stats.tsx`, `footer.tsx` (en el layout; los textos legales quedan sin enlace hasta hacer esas páginas, al final) `timeline.tsx` (columna izquierda `sticky` única cuyo año y "n/6" cambian según la década que cruza el centro, IntersectionObserver en `timeline-scroller.tsx`; en mobile riel lateral con el año horizontal; bajadas EN ya traducidas en Sanity) `/publicaciones` (hero oscuro compacto, `components/publications/*`, filtro/orden puros en `lib/search/`, estado en la URL, 197 tarjetas en el HTML con 24 visibles; vista lista/tarjetas solo en mobile (`?view=list` + localStorage), chips de categoría con colores `--cat-*` míos; JSON-LD ItemList; navbar: la ruta actual se marca tras hidratar para evitar el error #418 en `/en/*`) navbar mobile (`components/navbar/mobile-chrome.tsx`: logo flotante + barra inferior [menú · página actual | Publicaciones · tema]; en /publicaciones la píldora es el buscador y comparte texto con la página vía `lib/search/query-store.ts`; menú flotante en `mobile-menu.tsx`; la ruta actual solo se pinta tras hidratar) `/docencia` y `/biografia` (hero común `components/page-hero.tsx`, acordeones solo en mobile con `components/disclosure.tsx`, contenido siempre en el HTML; `docenciaPage.statement` nuevo, falta desplegar el Studio) `/investigacion` (acordeón de áreas, uno abierto a la vez, primera abierta en desktop, deep-link `#slug` con `hashchange`; `components/investigacion/areas-accordion.tsx`; texto con negrita/cursiva vía `RichText`) y `research-areas.tsx` + `research-areas-grid.tsx` (6 tarjetas → `<dialog>` fullscreen con cursor ×; textos en `homePage.researchAreas`, ilustraciones en `public/images/areas/`; falta `pnpm --filter studio deploy` para que el Studio muestre los campos nuevos).
-   Pendiente: seguir con las demás secciones de la home (timeline…), páginas
-   internas, dark mode del logo FCFM, mobile. No inventar lo que el usuario no explicó.
-4. Las páginas (`web/app/[locale]/**/page.tsx`) son stubs que solo muestran un `<h1>`;
-   los datos ya se leen con las funciones de `web/lib/sanity/fetch.ts`.
+3. **Fase 3 casi cerrada (T5–T8 en la práctica):** home, Publicaciones, Docencia, Biografía e
+   Investigación hechas en desktop **y** mobile (el usuario fue explicando cada componente; no
+   inventar lo que no explicó). Falta **Contacto** (informativa), las páginas de **privacidad/términos**
+   (al final) y la capa SEO (T9: JSON-LD `Person`, sitemap, robots, llms.txt).
+   Línea visual: fondo #f1f0ef (paneles #e6e6e6, tarjetas blancas), paleta #1c1c1c / #393939 /
+   #f7f7f7, Zalando Sans ≤600, glass en navbar, Framer Motion en entradas, radio de cards 20px.
+   Tokens solo en `web/app/globals.css` (semánticos `bg/panel/card/surface/fg/accent/line`, `art`,
+   `tl-bg/tl-card` para secciones oscuras, `cat-*` para chips de categoría; los colores dark y
+   `cat-*`/`tl-*` los propuse yo, no vienen de Figma). `--gutter` = margen lateral común.
+   Tema: oscuro por `prefers-color-scheme` en CSS (sin `<script>`: React 19 lo rechaza al cambiar de
+   idioma); `ThemeSync` aplica la elección guardada. Las secciones declaran `data-nav-tone`.
+   - **Navegación** (`components/navbar/`): desktop = glass arriba + `desktop-pill.tsx` (píldora fija
+     abajo: página actual | Publicaciones, en /publicaciones el otro lado es Inicio). Mobile (< md) =
+     `mobile-chrome.tsx`: logo flotante y barra inferior [menú · página actual | Publicaciones · tema];
+     en /publicaciones la píldora es el buscador y comparte el texto con la página vía
+     `lib/search/query-store.ts`. La ruta actual solo se pinta tras hidratar (`useHydrated`): en
+     `/en/*` el servidor no la conoce y daba el error de React #418.
+   - **Home:** `hero.tsx` (mobile: foto 50svh con card superpuesta), `career-stats.tsx`,
+     `research-areas.tsx` + `research-areas-grid.tsx` (6 tarjetas → `<dialog>` fullscreen con cursor ×;
+     textos en `homePage.researchAreas`, ilustraciones en `public/images/areas/`), `timeline.tsx` +
+     `timeline-scroller.tsx` (columna izquierda sticky única, año y "n/6" cambian por década con
+     IntersectionObserver; riel lateral en mobile), `footer.tsx` (textos legales sin enlace por ahora).
+   - **Publicaciones:** `components/publications/*`, filtro/orden puros y con tests en `lib/search/`;
+     197 tarjetas en el HTML (24 visibles, resto `hidden`); estado en la URL (`?q ?cat ?year ?sort ?view`);
+     vista lista/tarjetas solo mobile (localStorage); JSON-LD `ItemList`; contador dinámico en el hero mobile.
+   - **Docencia / Biografía / Investigación:** `page-hero.tsx` común, `disclosure.tsx` (acordeón solo
+     mobile; contenido siempre en el HTML), `areas-accordion.tsx` (uno abierto a la vez, primera abierta
+     en desktop, deep-link `#slug`), `portable-text.tsx` (`RichText` con negrita/cursiva/enlaces).
+     `docenciaPage.statement` es campo nuevo (el WP repetía la frase como 3.er párrafo de la intro).
+   - `lib/seo/metadata.ts` (`pageMetadata`: canonical + hreflang) y `lib/seo/site.ts` (`SITE_URL`
+     = https://carlosconca.cl, `doiFromLink`) los usan todas las páginas ya hechas.
+   - **Pendiente de despliegue:** `pnpm --filter studio deploy` para que el Studio muestre los campos
+     nuevos (`homePage.areasIntro/researchAreas`, `docenciaPage.statement`). Los datos ya están en
+     Sanity (parches dirigidos `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
+4. Pendiente de contenido/diseño: Contacto; privacidad y términos; logo FCFM en modo oscuro; el
+   contador de "Publicaciones" en la home (¿dinámico?); la publicación 198; ORCID/correo; la
+   categoría de "A robust modeling framework…" (JSON dice Indexado, el WP la muestra WOS-ISI).
+   Verificación visual hecha solo con Chrome headless (modo oscuro del sistema, sin Safari/iOS ni
+   dispositivo real); modo claro y teclado virtual sin probar.
 
 ### Hecho (T1–T4 del ROADMAP técnico)
 

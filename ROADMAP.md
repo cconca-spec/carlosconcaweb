@@ -210,7 +210,9 @@ despliega con `sanity deploy`; no hace falta para escribir ni leer documentos.
 - [x] Navbar traslúcida adaptativa + switch ES/EN (falta revisarla contra Figma y mobile)
 - [x] Hero y sección Carrera académica de la home (ES/EN)
 - [x] `--gutter` común navbar/secciones
-- [ ] Primitivas: tipografía, botón, tarjeta, contenedor, acordeón
+- [x] Navbar mobile (logo flotante + barra inferior) y píldora de cambio rápido en desktop
+- [x] Footer, áreas de investigación, timeline, Publicaciones, Docencia, Biografía, Investigación (desktop y mobile)
+- [ ] Primitivas: tipografía, botón, tarjeta, contenedor (hoy cada componente lleva sus clases; `disclosure` y `page-hero` ya son compartidos)
 
 ## T6 · Componente de Publicaciones
 
@@ -226,7 +228,7 @@ El componente crítico. Orden importa:
 
 ## T7 · Páginas
 
-Inicio → Publicaciones → Investigación → Docencia → Biografía → Contacto.
+Inicio ✅ → Publicaciones ✅ → Investigación ✅ → Docencia ✅ → Biografía ✅ → Contacto (pendiente).
 Contacto informativo por ahora; el formulario (Server Action + Resend) queda para el final.
 
 ## T8 · Mobile
