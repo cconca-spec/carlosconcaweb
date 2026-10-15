@@ -7,10 +7,28 @@ Se completa a medida que llegan las cuentas del cliente.
 
 | Servicio | Dueño actual | Dueño final | Estado |
 |---|---|---|---|
-| Repo GitHub (`hyperagencia/carlosconcaweb`) | Hyper | Hyper | local, sin push |
+| Repo GitHub (`cconca-spec/carlosconcaweb`) | Carlos | Carlos | publicado el 2026-10-15; Hyper es colaborador y empuja por SSH con deploy key |
 | Sanity (proyecto `ntv5ihqf`, dataset `production`) | Carlos | Carlos | creado; contenido migrado (197 publicaciones + 14 páginas) |
 | Vercel | — | Carlos | sin conectar |
 | DNS carlosconca.cl | — | Carlos | pendiente |
+
+## Repo y acceso por SSH
+
+El repo vive en la cuenta de Carlos porque Vercel Hobby solo conecta repos del dueño.
+`origin` = `git@github.com-cconca:cconca-spec/carlosconcaweb.git`. El alias sale de
+`~/.ssh/config` y usa la llave `~/.ssh/id_hyper_cconca` (ed25519, título `hyper-access`),
+registrada como **deploy key con escritura** en el repo (Settings → Deploy keys), no en la
+cuenta de Carlos. Para otra máquina: generar una llave nueva y registrarla igual.
+Comprobar con `ssh -T git@github.com-cconca`.
+
+## Conectar Vercel (lo hace Carlos desde su cuenta)
+
+1. Add New → Project → importar `cconca-spec/carlosconcaweb`.
+2. Root Directory: `web`. Framework: Next.js.
+3. Variables de entorno de `.env.example` (sin `SANITY_WRITE_TOKEN`).
+4. En Hobby, un commit de un autor distinto al dueño puede quedar bloqueado: probar con un
+   deploy de prueba hecho por `hyperagencia`.
+5. Con la URL pública, crear el webhook de Sanity (sección siguiente).
 
 ## Variables de entorno
 

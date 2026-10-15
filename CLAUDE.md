@@ -184,9 +184,12 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 
 ### Decisiones
 
-- Repo: `github.com/hyperagencia/carlosconcaweb` (Hyper). Trabajo en
-  `~/dev/carlosconca`, **fuera de iCloud**. Varios commits locales, **sin push**
-  (no pushear sin que el usuario lo pida).
+- Repo (desde 2026-10-15): `github.com/cconca-spec/carlosconcaweb`, en la cuenta de
+  Carlos porque Vercel Hobby solo conecta repos del dueño. `hyperagencia` es colaborador.
+  `origin` va por SSH con una deploy key con escritura (`~/.ssh/id_hyper_cconca`, alias
+  `github.com-cconca` en `~/.ssh/config`). El repo anterior `hyperagencia/carlosconcaweb`
+  queda como respaldo y no se usa. Trabajo en `~/dev/carlosconca`, **fuera de iCloud**.
+  Commits locales; **no pushear sin que el usuario lo pida**.
 - Sanity: cuenta de Carlos, proyecto `ntv5ihqf`, dataset `production` (lectura
   pública; las lecturas del sitio no usan token). El token de escritura vence el
   2027-01-03 y quedó expuesto en una conversación: rotarlo al terminar de desarrollar.
