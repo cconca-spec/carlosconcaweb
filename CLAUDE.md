@@ -204,7 +204,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
   resultado), que las variables `SANITY_PROJECT_ID`, `SANITY_DATASET`, `SANITY_REVALIDATE_SECRET`
   estén cargadas (nunca `SANITY_WRITE_TOKEN`), y probar si Hobby bloquea commits de autor
   distinto al dueño. El warning de `engines: node >=22` es inocuo (se puede fijar a 22.x).
-- Repo ya publicado: 3 commits de pnpm/docs empujados el 2026-10-15/18; `origin/main` al día.
+- Repo publicado; el fix de pnpm (175a417) ya está en origin. Los docs del 2026-10-19 van en un commit posterior.
 - **Sin formulario de contacto ni Resend por ahora**: `/contacto` es informativa.
 - Figma (`loI5LpwjO7N6uRGsD73gbl`, "Carlos Conca Wireframes"): es un wireframe con
   datos de muestra (47+ años, 218 publicaciones, 119 ISI, 16 doctores) que
