@@ -108,7 +108,7 @@ redirects pasa al 100%.
 ## Fase 6 · Cutover
 
 - [ ] Proyecto Sanity definitivo en la cuenta de Carlos + `pnpm migrate`
-- [ ] Proyecto Vercel en la cuenta de Carlos, importando el repo de Hyper
+- [~] Proyecto Vercel en la cuenta de Carlos, importando `cconca-spec/carlosconcaweb` (creado; falta confirmar build Ready, variables y webhook)
 - [ ] Revisión en staging con el cliente
 - [ ] Bajar TTL de DNS 24 h antes
 - [ ] Cambio de DNS. **WordPress se deja intacto hasta 30 días después**

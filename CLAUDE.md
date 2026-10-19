@@ -195,7 +195,16 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
   2027-01-03 y quedó expuesto en una conversación: rotarlo al terminar de desarrollar.
 - Studio desplegado (2026-10-06): https://carlosconca.sanity.studio (`pnpm --filter studio deploy`,
   `appId` en `studio/sanity.cli.ts`).
-- Vercel: plan gratuito, **sin conectar** hasta tener acceso. Solo local.
+- Vercel (2026-10-19): proyecto creado en la cuenta de Carlos (plan Hobby), conectado a
+  `cconca-spec/carlosconcaweb`, **Root Directory `web`**. Tres fallos ya resueltos:
+  `pnpm@11.12.0` y `11.13.0` son releases rotos (deprecados en npm) → pin en `11.13.1`
+  (`package.json` raíz y `web/`; no subir a versiones deprecadas); y `NEXT_NO_VERSION` por
+  Root Directory `./` → `web`. Con eso el install pasa. **Pendiente de confirmar:** que el
+  build de Next termine en Ready (el usuario dijo que "quedó en deploy" sin confirmar
+  resultado), que las variables `SANITY_PROJECT_ID`, `SANITY_DATASET`, `SANITY_REVALIDATE_SECRET`
+  estén cargadas (nunca `SANITY_WRITE_TOKEN`), y probar si Hobby bloquea commits de autor
+  distinto al dueño. El warning de `engines: node >=22` es inocuo (se puede fijar a 22.x).
+- Repo ya publicado: 3 commits de pnpm/docs empujados el 2026-10-15/18; `origin/main` al día.
 - **Sin formulario de contacto ni Resend por ahora**: `/contacto` es informativa.
 - Figma (`loI5LpwjO7N6uRGsD73gbl`, "Carlos Conca Wireframes"): es un wireframe con
   datos de muestra (47+ años, 218 publicaciones, 119 ISI, 16 doctores) que
@@ -231,8 +240,8 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 ### Pendiente del usuario
 
 Export de GSC/GA4 (línea base), Fase 0 sin hacer (`curl` de trailing slash en
-producción, PageSpeed/CrUX de las 12 URLs), acceso a Vercel/DNS de Carlos, primer
-push del repo, diseño mobile en Figma (Fase 1, solo bloquea la Fase 4), y los assets
+producción, PageSpeed/CrUX de las 12 URLs), DNS de Carlos, confirmar el primer deploy
+en Vercel y crear el webhook de Sanity (INFRA.md), diseño mobile en Figma (Fase 1, solo bloquea la Fase 4), y los assets
 que falten (`assets/README.md` lista lo que no está).
 
 ---

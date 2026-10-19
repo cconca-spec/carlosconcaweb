@@ -9,7 +9,7 @@ Se completa a medida que llegan las cuentas del cliente.
 |---|---|---|---|
 | Repo GitHub (`cconca-spec/carlosconcaweb`) | Carlos | Carlos | publicado el 2026-10-15; Hyper es colaborador y empuja por SSH con deploy key |
 | Sanity (proyecto `ntv5ihqf`, dataset `production`) | Carlos | Carlos | creado; contenido migrado (197 publicaciones + 14 páginas) |
-| Vercel | — | Carlos | sin conectar |
+| Vercel | Carlos (Hobby) | Carlos | proyecto creado 2026-10-19, Root Directory `web`; falta confirmar el primer build en Ready |
 | DNS carlosconca.cl | — | Carlos | pendiente |
 
 ## Repo y acceso por SSH
@@ -28,6 +28,9 @@ Comprobar con `ssh -T git@github.com-cconca`.
 3. Variables de entorno de `.env.example` (sin `SANITY_WRITE_TOKEN`).
 4. En Hobby, un commit de un autor distinto al dueño puede quedar bloqueado: probar con un
    deploy de prueba hecho por `hyperagencia`.
+   Problemas ya vistos: `pnpm@11.12.0`/`11.13.0` están rotos (el `packageManager` está
+   fijado en 11.13.1; no usar versiones deprecadas en npm) y `NEXT_NO_VERSION` si el Root
+   Directory no es `web`.
 5. Con la URL pública, crear el webhook de Sanity (sección siguiente).
 
 ## Variables de entorno
