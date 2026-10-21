@@ -122,7 +122,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 3. **Fase 3 casi cerrada (T5–T8 en la práctica):** home, Publicaciones, Docencia, Biografía e
    Investigación hechas en desktop **y** mobile (el usuario fue explicando cada componente; no
    inventar lo que no explicó). **Contacto** (4 tarjetas con los enlaces de `footerInfo`) y la capa SEO (T9: JSON-LD `Person`, sitemap, robots,
-   llms.txt/llms-full.txt, openGraph) están hechos (2026-10-20). Falta privacidad/términos (al final), T10 y los redirects del WP.
+   llms.txt/llms-full.txt, openGraph) están hechos (2026-10-20). Los redirects del WP también (ver Decisiones). Falta privacidad/términos (al final) y T10 (Lighthouse CI).
    `pageUrl()` en `lib/seo/metadata.ts` agrega la barra final: `getPathname` no la pone y el canonical debe ser la URL final.
    Línea visual: fondo #f1f0ef (paneles #e6e6e6, tarjetas blancas), paleta #1c1c1c / #393939 /
    #f7f7f7, Zalando Sans ≤600, glass en navbar, Framer Motion en entradas, radio de cards 20px.
@@ -154,7 +154,10 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    - **Pendiente de despliegue:** `pnpm --filter studio deploy` para que el Studio muestre los campos
      nuevos (`homePage.areasIntro/researchAreas`, `docenciaPage.statement`). Los datos ya están en
      Sanity (parches dirigidos `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
-4. Pendiente de contenido/diseño: Contacto; privacidad y términos; logo FCFM en modo oscuro; el
+4. **Próximo, en este orden:** (a) crear el webhook de Sanity con la URL pública de Vercel (INFRA.md) y `pnpm --filter studio deploy`
+   (pedir permiso); (b) privacidad/términos; (c) T10 Lighthouse CI; (d) repetir los `curl` de redirects contra el preview/dominio.
+   El deploy de Vercel en producción ya fue confirmado por el usuario (2026-10-20).
+   Pendiente de contenido/diseño: imagen OG; privacidad y términos; logo FCFM en modo oscuro; el
    contador de "Publicaciones" en la home (¿dinámico?); la publicación 198; ORCID/correo; la
    categoría de "A robust modeling framework…" (JSON dice Indexado, el WP la muestra WOS-ISI).
    Verificación visual hecha solo con Chrome headless (modo oscuro del sistema, sin Safari/iOS ni
