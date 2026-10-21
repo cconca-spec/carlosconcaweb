@@ -44,6 +44,10 @@
     "timelineTitle": "Timeline destacado",
     "viewBiography": "Ver biografía"
   },
+  "Contact": {
+    "external": "(se abre en otra pestaña)",
+    "nav": "Enlaces de contacto"
+  },
   "Footer": {
     "title": "Carlos Conca",
     "logoAlt": "",

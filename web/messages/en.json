@@ -44,6 +44,10 @@
     "timelineTitle": "Featured timeline",
     "viewBiography": "View biography"
   },
+  "Contact": {
+    "external": "(opens in a new tab)",
+    "nav": "Contact links"
+  },
   "Footer": {
     "title": "Carlos Conca",
     "logoAlt": "",
