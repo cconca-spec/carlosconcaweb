@@ -99,7 +99,7 @@ con red 4G.
 - [x] JSON-LD: `Person`, `ItemList` de `ScholarlyArticle`
 - [x] `sitemap.ts`, `robots.ts`, `llms.txt`, `llms-full.txt`
 - [x] Anclas por área de investigación
-- [ ] Plan de redirects 301 probado contra staging, URL por URL
+- [x] Plan de redirects 301 (`web/lib/redirects.ts`, probado en `test:routes`; falta repetirlo contra el preview de Vercel y el dominio nuevo en el cutover)
 - [ ] Continuidad de GA4
 
 **Cierra cuando:** las 12 URLs resuelven sin salto de redirect y el mapa de

@@ -4,6 +4,6 @@ import { routing } from '@/lib/i18n/routing'
 export default createMiddleware(routing)
 
 export const config = {
-  // Todo menos api, _next, _vercel y archivos con extensión
-  matcher: '/((?!api|_next|_vercel|.*\\..*).*)',
+  // Todo menos api, cv (redirect al CV), _next, _vercel y archivos con extensión
+  matcher: '/((?!api|cv(?:/|$)|_next|_vercel|.*\\..*).*)',
 }

@@ -214,8 +214,9 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
   explica los componentes uno a uno; mobile es más simple y se piensa aparte.
 - Datos: `data/publicaciones.json` = 197 (120 wos, 43 actas, 16 indexado, 10 nacional,
   6 otras, 2 libro; 73 con DOI; `pdf` siempre null).
-- Redirects por cubrir (Fase 5): `/sample-page/`, `/work/`, posts, portfolio,
-  taxonomías. `/en/inicio-english/` ya está resuelto.
+- Redirects del WP (2026-10-20): `web/lib/redirects.ts` (301: `/en/inicio-english/`, `/author/…`, `/feed/`, PDF del CV → `/cv/`);
+  `/cv/` redirige (302) al CV vigente en Sanity. El contenido demo de Salient (sample-page, work, portfolio, taxonomías,
+  hello-world) queda en **404 a propósito** (soft-404 si va a la home). 404 global en `app/not-found.tsx`.
 - `docs/sanity-schema-conca.draft.ts` es el borrador histórico; la fuente de verdad
   del schema es `studio/schemaTypes/`.
 

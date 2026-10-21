@@ -10,6 +10,11 @@
     "award": "Premio Nacional de Ciencias Exactas 2003",
     "university": "Universidad de Chile"
   },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "text": "La dirección que buscas no existe o cambió de lugar.",
+    "home": "Ir al inicio"
+  },
   "Nav": {
     "home": "Inicio",
     "publications": "Publicaciones",

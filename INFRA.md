@@ -76,3 +76,7 @@ El endpoint devuelve 401 sin firma válida y 400 si el tipo no es uno de los ant
 ## Migración de hosting
 
 Pendiente: se documenta en la Fase 6 (cutover).
+
+## Redirects en el cutover
+
+Tras cambiar el DNS, repetir `curl -sI` sobre cada `source` de `web/lib/redirects.ts` contra el dominio real (301 al destino, sin cadenas), `/cv/` (302 a cdn.sanity.io) y una URL demo (`/work/` → 404). Reenviar el sitemap nuevo en Search Console; los `wp-sitemap*.xml` darán 404.

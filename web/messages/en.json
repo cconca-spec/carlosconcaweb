@@ -10,6 +10,11 @@
     "award": "National Prize in Exact Sciences 2003 (Chile)",
     "university": "University of Chile"
   },
+  "NotFound": {
+    "title": "Page not found",
+    "text": "The address you are looking for doesn't exist or has moved.",
+    "home": "Go to the home page"
+  },
   "Nav": {
     "home": "Home",
     "publications": "Publications",

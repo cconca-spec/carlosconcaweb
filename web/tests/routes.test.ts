@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { routing } from '@/lib/i18n/routing'
+import { LEGACY_REDIRECTS } from '@/lib/redirects'
 
 /**
  * Contrato con el SEO existente (invariante 1 de CLAUDE.md): las 12 URLs
@@ -63,10 +64,24 @@ describe('las 12 URLs', () => {
 })
 
 describe('redirects de URLs antiguas', () => {
-  it('/en/inicio-english/ → 301 a /en/', async () => {
-    const res = await get('/en/inicio-english/')
+  it.each(LEGACY_REDIRECTS)('$source → 301 a $destination', async ({ source, destination }) => {
+    const res = await get(source)
     expect(res.status).toBe(301)
-    expect(new URL(res.headers.get('location')!, base()).pathname).toBe('/en/')
+    expect(new URL(res.headers.get('location')!, base()).pathname).toBe(destination)
+  })
+
+  it('/cv/ redirige (302) al archivo vigente del CV', async () => {
+    const res = await get('/cv/')
+    expect(res.status).toBe(302)
+    expect(res.headers.get('location')).toMatch(/^https:\/\/cdn\.sanity\.io\//)
+  })
+
+  it('el contenido demo del WordPress queda en 404, sin redirect', async () => {
+    for (const path of ['/work/', '/sample-page/', '/portfolio/balanced/']) {
+      const res = await get(path)
+      expect(res.status).toBe(404)
+      expect(res.headers.get('location')).toBeNull()
+    }
   })
 
   it('/en/publicaciones/ (slug ES bajo /en) no es indexable: redirige al slug traducido', async () => {
