@@ -121,8 +121,9 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    debe pasar antes de tocar nada.
 3. **Fase 3 casi cerrada (T5–T8 en la práctica):** home, Publicaciones, Docencia, Biografía e
    Investigación hechas en desktop **y** mobile (el usuario fue explicando cada componente; no
-   inventar lo que no explicó). Falta **Contacto** (informativa), las páginas de **privacidad/términos**
-   (al final) y la capa SEO (T9: JSON-LD `Person`, sitemap, robots, llms.txt).
+   inventar lo que no explicó). **Contacto** (4 tarjetas con los enlaces de `footerInfo`) y la capa SEO (T9: JSON-LD `Person`, sitemap, robots,
+   llms.txt/llms-full.txt, openGraph) están hechos (2026-10-20). Falta privacidad/términos (al final), T10 y los redirects del WP.
+   `pageUrl()` en `lib/seo/metadata.ts` agrega la barra final: `getPathname` no la pone y el canonical debe ser la URL final.
    Línea visual: fondo #f1f0ef (paneles #e6e6e6, tarjetas blancas), paleta #1c1c1c / #393939 /
    #f7f7f7, Zalando Sans ≤600, glass en navbar, Framer Motion en entradas, radio de cards 20px.
    Tokens solo en `web/app/globals.css` (semánticos `bg/panel/card/surface/fg/accent/line`, `art`,

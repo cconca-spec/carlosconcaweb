@@ -95,10 +95,10 @@ con red 4G.
 
 ## Fase 5 · SEO, AEO y GEO
 
-- [ ] Metadata, canonical, hreflang en las 12 rutas
-- [ ] JSON-LD: `Person`, `ItemList` de `ScholarlyArticle`
-- [ ] `sitemap.ts`, `robots.ts`, `llms.txt`, `llms-full.txt`
-- [ ] Anclas por área de investigación
+- [x] Metadata, canonical, hreflang en las 12 rutas
+- [x] JSON-LD: `Person`, `ItemList` de `ScholarlyArticle`
+- [x] `sitemap.ts`, `robots.ts`, `llms.txt`, `llms-full.txt`
+- [x] Anclas por área de investigación
 - [ ] Plan de redirects 301 probado contra staging, URL por URL
 - [ ] Continuidad de GA4
 
@@ -237,9 +237,10 @@ Sobre el diseño aprobado en Fase 1. Un solo árbol de componentes: CSS y
 container queries. Nav y panel de filtros son los únicos montados
 condicionalmente.
 
-## T9 · Capa de descubrimiento
+## T9 · Capa de descubrimiento · ✅ hecho (2026-10-20)
 
-`generateMetadata`, JSON-LD, sitemap, robots, `llms.txt`, `llms-full.txt`.
+`generateMetadata` en las 6 páginas (con openGraph/twitter), JSON-LD `Person` (layout) e `ItemList`, `sitemap.ts` (12 URLs con hreflang),
+`robots.ts`, `llms.txt`, `llms-full.txt`. Falta imagen OG (decisión de diseño) y ORCID en `sameAs`.
 Los dos últimos se generan desde la misma data de Sanity en build.
 
 ## T10 · Endurecimiento

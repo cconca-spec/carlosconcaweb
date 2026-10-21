@@ -969,6 +969,70 @@ export type SITE_SETTINGS_QUERY_RESULT = {
   cvUrl: string | null;
 } | null;
 
+// Source: lib/sanity/queries.ts
+// Variable: CONTENT_DATES_QUERY
+// Query: {  "pages": *[_type in $pageTypes]{ _type, language, _updatedAt },  "publications": *[_type == "publication"] | order(_updatedAt desc)[0]._updatedAt}
+export type CONTENT_DATES_QUERY_RESULT = {
+  pages: Array<
+    | {
+        _type: "biografiaPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "contactoPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "docenciaPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "homePage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "investigacionPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "publicacionesPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "publication";
+        language: null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "sanity.fileAsset";
+        language: null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "sanity.imageAsset";
+        language: null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "siteSettings";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
+        _type: "translation.metadata";
+        language: null;
+        _updatedAt: string;
+      }
+  >;
+  publications: string | null;
+};
+
 // Query TypeMap
 declare global {
   interface SanityQueries {
@@ -980,6 +1044,7 @@ declare global {
     '*[_id == $id && _type == "publicacionesPage"][0]': PUBLICACIONES_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "contactoPage"][0]': CONTACTO_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "siteSettings"][0]{\n  ...,\n  "cvUrl": cv.asset->url\n}': SITE_SETTINGS_QUERY_RESULT;
+    '{\n  "pages": *[_type in $pageTypes]{ _type, language, _updatedAt },\n  "publications": *[_type == "publication"] | order(_updatedAt desc)[0]._updatedAt\n}': CONTENT_DATES_QUERY_RESULT;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

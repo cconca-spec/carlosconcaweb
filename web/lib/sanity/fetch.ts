@@ -2,6 +2,7 @@ import { cacheLife, cacheTag } from 'next/cache'
 import { client } from './client'
 import {
   BIOGRAFIA_PAGE_QUERY,
+  CONTENT_DATES_QUERY,
   CONTACTO_PAGE_QUERY,
   DOCENCIA_PAGE_QUERY,
   HOME_PAGE_QUERY,
@@ -11,6 +12,7 @@ import {
   SITE_SETTINGS_QUERY,
 } from './queries'
 import type { Locale } from '@/lib/i18n/routing'
+import { PAGE_TYPES } from './tags'
 
 // Todas las lecturas de Sanity siguen este patrón: 'use cache' + cacheLife('max')
 // + cacheTag(<_type>). El webhook invalida por `_type` (ver app/api/revalidate).
@@ -69,4 +71,11 @@ export async function getContactoPage(locale: Locale) {
   cacheLife('max')
   cacheTag('contactoPage')
   return client.fetch(CONTACTO_PAGE_QUERY, { id: `contactoPage-${locale}` })
+}
+
+export async function getContentDates() {
+  'use cache'
+  cacheLife('max')
+  cacheTag('publication', ...PAGE_TYPES)
+  return client.fetch(CONTENT_DATES_QUERY, { pageTypes: [...PAGE_TYPES] })
 }

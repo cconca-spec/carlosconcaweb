@@ -18,3 +18,9 @@ export const SITE_SETTINGS_QUERY = defineQuery(`*[_id == $id && _type == "siteSe
   ...,
   "cvUrl": cv.asset->url
 }`)
+
+// Fechas de última edición para el sitemap: una por página/idioma y la de la publicación más reciente.
+export const CONTENT_DATES_QUERY = defineQuery(`{
+  "pages": *[_type in $pageTypes]{ _type, language, _updatedAt },
+  "publications": *[_type == "publication"] | order(_updatedAt desc)[0]._updatedAt
+}`)
