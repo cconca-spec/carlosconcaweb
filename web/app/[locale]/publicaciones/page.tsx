@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { JsonLd } from '@/components/seo/json-ld'
 import { PageHero } from '@/components/page-hero'
 import { PublicationsBrowser } from '@/components/publications/publications-browser'
 import type { Locale } from '@/lib/i18n/routing'
@@ -81,10 +82,7 @@ export default async function Page({ params }: PageProps<'/[locale]/publicacione
         <PublicationsBrowser items={items} />
       </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
-      />
+      <JsonLd data={jsonLd} />
     </main>
   )
 }

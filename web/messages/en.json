@@ -3,6 +3,13 @@
     "siteName": "Carlos Conca",
     "description": "Carlos Conca, Chilean mathematician, National Prize in Exact Sciences 2003."
   },
+  "Person": {
+    "jobTitle": "Mathematician",
+    "description": "Chilean mathematician, National Prize in Exact Sciences 2003.",
+    "nationality": "Chile",
+    "award": "National Prize in Exact Sciences 2003 (Chile)",
+    "university": "University of Chile"
+  },
   "Nav": {
     "home": "Home",
     "publications": "Publications",

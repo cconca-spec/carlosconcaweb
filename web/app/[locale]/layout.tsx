@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { Zalando_Sans } from 'next/font/google'
 import { ThemeSync } from '@/components/theme-sync'
 import { Footer } from '@/components/footer'
+import { PersonJsonLd } from '@/components/seo/person-json-ld'
 import { Navbar } from '@/components/navbar/navbar'
 import { SITE_URL } from '@/lib/seo/site'
 import { routing } from '@/lib/i18n/routing'
@@ -49,6 +50,7 @@ export default async function LocaleLayout({
           <Navbar />
           {children}
           <Footer locale={locale} />
+          <PersonJsonLd locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
