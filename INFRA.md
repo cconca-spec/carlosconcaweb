@@ -73,6 +73,15 @@ Cuando exista el sitio desplegado, en sanity.io/manage → API → Webhooks:
 
 El endpoint devuelve 401 sin firma válida y 400 si el tipo no es uno de los anteriores.
 
+## Lighthouse CI (T10)
+
+`pnpm lhci` (en CI, tras `test:routes`) levanta `next start` en :3102 y mide 6 URLs representativas
+en perfil móvil, 3 corridas por URL y mediana (`web/lighthouserc.cjs`). Requiere `pnpm build` y Chrome.
+Falla el build si: LCP > 4500 ms (tope de regresión; el objetivo de 1,2 s sale como advertencia),
+CLS > 0,05, TBT > 200 ms (proxy de laboratorio del INP, que es métrica de campo), accesibilidad < 0,95
+o falla alguna auditoría SEO básica. `canonical` se excluye porque apunta a carlosconca.cl y en CI se
+mide en localhost (lo cubre `lib/seo/metadata.test.ts`). El reporte queda como artefacto `lighthouse`.
+
 ## Migración de hosting
 
 Pendiente: se documenta en la Fase 6 (cutover).

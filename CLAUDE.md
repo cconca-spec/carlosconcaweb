@@ -19,7 +19,8 @@ pnpm typecheck              # tsc --noEmit en ambos workspaces
 pnpm lint
 pnpm test                   # vitest
 pnpm typegen                # extrae schema de studio/ + genera tipos de las queries de web/
-pnpm test:routes            # las 12 URLs contra next start (requiere pnpm build antes)
+pnpm test:routes            # las 12 URLs indexadas + las 4 legales contra next start (requiere pnpm build antes)
+pnpm lhci                   # Lighthouse CI móvil contra next start (requiere pnpm build; Chrome instalado)
 
 pnpm migrate -- --dry-run   # valida el JSON de publicaciones sin escribir
 pnpm migrate                # importa a Sanity (idempotente)
@@ -122,7 +123,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 3. **Fase 3 casi cerrada (T5–T8 en la práctica):** home, Publicaciones, Docencia, Biografía e
    Investigación hechas en desktop **y** mobile (el usuario fue explicando cada componente; no
    inventar lo que no explicó). **Contacto** (4 tarjetas con los enlaces de `footerInfo`) y la capa SEO (T9: JSON-LD `Person`, sitemap, robots,
-   llms.txt/llms-full.txt, openGraph) están hechos (2026-10-20). Los redirects del WP también (ver Decisiones). Falta privacidad/términos (al final) y T10 (Lighthouse CI).
+   llms.txt/llms-full.txt, openGraph) están hechos (2026-10-20). Los redirects del WP también (ver Decisiones). Privacidad y términos (`/privacidad`, `/en/privacy`, `/terminos`, `/en/terms`; Sanity `privacidadPage`/`terminosPage`; borrador a revisar por el cliente) y T10 (Lighthouse CI, `web/lighthouserc.cjs`) hechos (2026-11-02).
    `pageUrl()` en `lib/seo/metadata.ts` agrega la barra final: `getPathname` no la pone y el canonical debe ser la URL final.
    Línea visual: fondo #f1f0ef (paneles #e6e6e6, tarjetas blancas), paleta #1c1c1c / #393939 /
    #f7f7f7, Zalando Sans ≤600, glass en navbar, Framer Motion en entradas, radio de cards 20px.
@@ -155,7 +156,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
      nuevos (`homePage.areasIntro/researchAreas`, `docenciaPage.statement`). Los datos ya están en
      Sanity (parches dirigidos `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
 4. **Próximo, en este orden:** (a) crear el webhook de Sanity con la URL pública de Vercel (INFRA.md) y `pnpm --filter studio deploy`
-   (pedir permiso); (b) privacidad/términos; (c) T10 Lighthouse CI; (d) repetir los `curl` de redirects contra el preview/dominio.
+   (pedir permiso); (b) revisión del texto legal por el cliente; (c) bajar el tope de LCP de Lighthouse CI (hoy 4500 ms; objetivo 1,2 s, mediana lab móvil 2,0–3,7 s) y arreglar contraste/orden de encabezados en /publicaciones; (d) repetir los `curl` de redirects contra el preview/dominio.
    El deploy de Vercel en producción ya fue confirmado por el usuario (2026-10-20).
    Pendiente de contenido/diseño: imagen OG; privacidad y términos; logo FCFM en modo oscuro; el
    contador de "Publicaciones" en la home (¿dinámico?); la publicación 198; ORCID/correo; la

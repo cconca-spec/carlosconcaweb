@@ -16,7 +16,8 @@
     "test:routes": "pnpm --filter web test:routes",
     "extract:wp": "tsx scripts/extract-wp-content.ts",
     "build:content": "tsx scripts/build-page-content.ts",
-    "load:pages": "tsx --env-file=.env.local scripts/load-pages.ts"
+    "load:pages": "tsx --env-file=.env.local scripts/load-pages.ts",
+    "lhci": "pnpm --filter web lhci"
   },
   "devDependencies": {
     "@sanity/client": "^8.9.0",
