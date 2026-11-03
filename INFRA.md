@@ -92,9 +92,67 @@ CLS > 0,05, TBT > 200 ms (proxy de laboratorio del INP, que es métrica de campo
 o falla alguna auditoría SEO básica. `canonical` se excluye porque apunta a carlosconca.cl y en CI se
 mide en localhost (lo cubre `lib/seo/metadata.test.ts`). El reporte queda como artefacto `lighthouse`.
 
-## Migración de hosting
+## Migración de hosting: checklist de cutover (carlosconca.cl)
 
-Pendiente: se documenta en la Fase 6 (cutover).
+### DNS actual (inventario del 2026-11-02, zona del cPanel de Namecheap)
+Nameservers: `dns1/dns2.namecheaphosting.com` → **la zona del cPanel es la que manda**. WordPress y correo están en
+el mismo servidor de Namecheap (198.54.119.207); los MX apuntan a `mx{1,2,3}-hosting.jellyfish.systems`.
+
+| Registro | Valor | En el cutover |
+|---|---|---|
+| `A` carlosconca.cl | 198.54.119.207 | **cambiar** al valor que muestre Vercel (suele ser `76.76.21.21`) |
+| `CNAME` www | carlosconca.cl | **cambiar** al valor que indique Vercel (p. ej. `cname.vercel-dns.com`) |
+| `MX` ×3, `TXT` SPF, `default._domainkey` (DKIM), `_dmarc` | correo en Namecheap | **no tocar** |
+| `A` mail, webmail, cpanel, whm, ftp, webdisk, cpcontacts, cpcalendars, autoconfig, autodiscover | 198.54.119.207 | **no tocar** (siguen sirviendo correo y paneles) |
+| `SRV`/`TXT` _caldav(s), _carddav(s), _autodiscover | cPanel | **no tocar** |
+
+No hay registros CAA: Vercel puede emitir el certificado sin cambios. El SPF usa `+a`: al mover el apex a Vercel
+deja de cubrir la IP del hosting, pero `+mx`, las dos `ip4` y `include:spf.web-hosting.com` siguen autorizando el
+correo saliente. Aun así, enviar un correo de prueba a una cuenta externa tras el cambio y revisar que no caiga en spam.
+
+> ⚠ **No cancelar ni dejar vencer el hosting de Namecheap**: sirve el correo `@carlosconca.cl` y es el respaldo
+> inmediato (WordPress) si hay que volver atrás. Avisar a Carlos y a quien paga la factura.
+
+### Antes (días previos)
+- [ ] **Línea base del WP** (solo posible mientras sigue en línea): export de GSC y GA4, y PageSpeed/CrUX de las 12 URLs (mobile y desktop), más los `curl -sI` de trailing slash. Guardar en `docs/baseline/`.
+- [ ] Decidir analítica: el sitio nuevo no tiene (GA4 o Vercel Analytics). Si se agrega, hacerlo antes del cambio y actualizar la política de privacidad.
+- [ ] Contenido visible al público: correo/ORCID de Carlos, publicación 198, revisión del texto legal por el cliente, imagen OG.
+- [ ] Confirmar que el build de `main` está en Ready y que el CI de GitHub (incluye `pnpm lhci`) pasa.
+- [ ] Bajar el TTL del `A` apex y del `CNAME` www de 14400 a **300 s** con 24 h de anticipación (mínimo 4 h).
+- [ ] Avisar a Carlos del plan y del riesgo del correo (ver arriba).
+
+### Día D (lo ejecuta quien tenga acceso a Vercel y al cPanel de Carlos)
+1. [ ] Vercel → proyecto → Settings → Domains: agregar `carlosconca.cl` (principal) y `www.carlosconca.cl` (redirige al apex). Copiar los valores exactos que pida.
+2. [ ] cPanel → Zone Editor: editar solo el `A` apex y el `CNAME` www con esos valores.
+3. [ ] Esperar propagación y certificado: `dig +short carlosconca.cl`, `curl -sI https://carlosconca.cl/`.
+4. [ ] **Webhook de Sanity**: cambiar su URL a `https://carlosconca.cl/api/revalidate/` (sanity.io/manage → API → Webhooks, id `lzsRqApprGGahRy9`).
+5. [ ] Verificación contra el dominio real (ver abajo).
+6. [ ] Correo: enviar y recibir una prueba; `dig +short MX carlosconca.cl` sin cambios.
+7. [ ] Search Console: reenviar `https://carlosconca.cl/sitemap.xml`; no hace falta "cambio de dirección" (mismo dominio). Los `wp-sitemap*.xml` darán 404.
+
+### Verificación (copiar y pegar)
+```bash
+B=https://carlosconca.cl
+for p in / /publicaciones/ /investigacion/ /docencia/ /biografia/ /contacto/ /privacidad/ /terminos/ \
+         /en/ /en/publications/ /en/research/ /en/teaching/ /en/biography/ /en/contact/ /en/privacy/ /en/terms/ \
+         /robots.txt /sitemap.xml /llms.txt; do printf "%s -> " $p; curl -s -o /dev/null -w "%{http_code}\n" $B$p; done
+curl -sI $B/publicaciones | head -3          # 308 → con slash
+curl -sI $B/en/inicio-english/ | head -3     # 301 → /en/
+curl -sI $B/cv/ | head -3                    # 302 → CV en cdn.sanity.io
+curl -s -o /dev/null -w "%{http_code}\n" $B/work/   # 404 a propósito
+curl -sI https://www.carlosconca.cl/ | head -3       # redirige al apex
+curl -s -X POST -o /dev/null -w "%{http_code}\n" $B/api/revalidate/   # 401
+```
+Además: cada `source` de `web/lib/redirects.ts` debe dar 301 al destino sin cadenas.
+
+### Rollback
+Devolver el `A` apex a `198.54.119.207` y el `CNAME` www a `carlosconca.cl` (con TTL en 300 s tarda minutos). El WordPress sigue intacto en el hosting. Restaurar la URL anterior del webhook si se quiere seguir probando en `carlosconcaweb.vercel.app`.
+
+### Después (primeras semanas)
+- [ ] Comparar Core Web Vitals de campo contra la línea base (objetivos en CLAUDE.md).
+- [ ] Vigilar Search Console: cobertura, 404 nuevos, URLs indexadas de las 12 rutas.
+- [ ] **Rotar el token de Sanity** ("Hyper Access") y usar uno mínimo (solo Editor) para el mantenimiento.
+- [ ] Decidir cuándo apagar el WordPress (nunca el hosting si sigue sirviendo el correo).
 
 ## Redirects en el cutover
 

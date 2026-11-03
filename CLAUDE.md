@@ -142,7 +142,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
      `research-areas.tsx` + `research-areas-grid.tsx` (6 tarjetas → `<dialog>` fullscreen con cursor ×;
      textos en `homePage.researchAreas`, ilustraciones en `public/images/areas/`), `timeline.tsx` +
      `timeline-scroller.tsx` (columna izquierda sticky única, año y "n/6" cambian por década con
-     IntersectionObserver; riel lateral en mobile), `footer.tsx` (textos legales sin enlace por ahora).
+     IntersectionObserver; riel lateral en mobile), `footer.tsx` (enlaces a privacidad y términos).
    - **Publicaciones:** `components/publications/*`, filtro/orden puros y con tests en `lib/search/`;
      197 tarjetas en el HTML (24 visibles, resto `hidden`); estado en la URL (`?q ?cat ?year ?sort ?view`);
      vista lista/tarjetas solo mobile (localStorage); JSON-LD `ItemList`; contador dinámico en el hero mobile.
@@ -155,13 +155,24 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    - **Studio desplegado (2026-11-02)** con los campos nuevos (`homePage.areasIntro/researchAreas`,
      `docenciaPage.statement`, privacidad y términos). Los datos ya están en Sanity (parches dirigidos
      `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
-4. **Próximo, en este orden:** (a) ~~webhook de Sanity y deploy del Studio~~ hechos el 2026-11-02 (producción: https://carlosconcaweb.vercel.app); (b) revisión del texto legal por el cliente; (c) bajar el tope de LCP de Lighthouse CI (hoy 4500 ms; objetivo 1,2 s, mediana lab móvil 2,0–3,7 s) y arreglar contraste/orden de encabezados en /publicaciones; (d) repetir los `curl` de redirects contra el preview/dominio.
-   El deploy de Vercel en producción ya fue confirmado por el usuario (2026-10-20).
-   Pendiente de contenido/diseño: imagen OG; privacidad y términos; logo FCFM en modo oscuro; el
-   contador de "Publicaciones" en la home (¿dinámico?); la publicación 198; ORCID/correo; la
-   categoría de "A robust modeling framework…" (JSON dice Indexado, el WP la muestra WOS-ISI).
+4. **Estado al 2026-11-02 — producción en https://carlosconcaweb.vercel.app (Ready).** Hecho: las 8 páginas
+   (6 + privacidad/términos), SEO/AEO (T9), redirects del WP, Lighthouse CI (T10), **Studio desplegado** y
+   **webhook de Sanity activo** (id `lzsRqApprGGahRy9`, probado: 200 `{revalidated}`). Los commits hasta `bc4fb02`
+   están en origin; el de docs `f9852b0` y los posteriores, locales hasta pedir push. Registros DNS y checklist
+   completo del cutover: **INFRA.md → "Migración de hosting"**.
+   **Falta, en este orden:**
+   (a) **Cutover a carlosconca.cl** (INFRA.md). Antes: línea base del WP (GSC/GA4, PageSpeed/CrUX de las 12 URLs), bajar TTL a 300 s,
+   decidir analítica. El hosting de Namecheap **no se cancela** (sirve el correo y es el respaldo).
+   (b) Contenido: revisión del texto legal por el cliente (borrador mío, y dice "escríbenos por Contacto" aunque Contacto no tiene correo),
+   correo y ORCID, publicación 198, imagen OG, contador de "Publicaciones" de la home (¿dinámico?), logo FCFM en modo oscuro,
+   categoría de "A robust modeling framework…" (JSON: Indexado; WP: WOS-ISI), bajadas del timeline EN sin traducir.
+   (c) Rendimiento y a11y: LCP medido en laboratorio móvil 2,0–3,7 s (objetivo < 1,2 s; la home es la peor, el LCP es la foto del hero);
+   el tope en `lighthouserc.cjs` es 4500 ms y debe bajar a medida que se optimice. `/publicaciones` falla `color-contrast` y `heading-order`.
+   (d) Confirmar que el CI de GitHub (con `pnpm lhci`) pasa: solo se probó en local.
+   (e) Tras el cutover: rotar el token de Sanity, comparar Core Web Vitals de campo, reenviar el sitemap.
    Verificación visual hecha solo con Chrome headless (modo oscuro del sistema, sin Safari/iOS ni
-   dispositivo real); modo claro y teclado virtual sin probar.
+   dispositivo real); modo claro y teclado virtual sin probar. En mobile el texto de las páginas legales se vio cortado
+   a la derecha en una captura de 390 px (probable artefacto del headless): revisar en un móvil real.
 
 ### Hecho (T1–T4 del ROADMAP técnico)
 
@@ -244,9 +255,9 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 
 ### Pendiente del usuario
 
-Export de GSC/GA4 (línea base), Fase 0 sin hacer (`curl` de trailing slash en
-producción, PageSpeed/CrUX de las 12 URLs), DNS de Carlos, diseño mobile en Figma (Fase 1, solo bloquea la Fase 4), y los assets
-que falten (`assets/README.md` lista lo que no está).
+Export de GSC/GA4 (línea base) y PageSpeed/CrUX de las 12 URLs (Fase 0, solo posible mientras el WP siga en línea);
+ejecutar el cutover de DNS (cuentas de Carlos en Vercel y cPanel; ver INFRA.md); decidir analítica; revisar el texto legal con
+el cliente; correo y ORCID; diseño mobile en Figma (Fase 1, solo bloquea la Fase 4); y los assets que falten (`assets/README.md`).
 
 ---
 
