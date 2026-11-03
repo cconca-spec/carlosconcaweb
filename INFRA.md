@@ -8,8 +8,8 @@ Se completa a medida que llegan las cuentas del cliente.
 | Servicio | Dueño actual | Dueño final | Estado |
 |---|---|---|---|
 | Repo GitHub (`cconca-spec/carlosconcaweb`) | Carlos | Carlos | publicado el 2026-10-15; Hyper es colaborador y empuja por SSH con deploy key |
-| Sanity (proyecto `ntv5ihqf`, dataset `production`) | Carlos | Carlos | creado; contenido migrado (197 publicaciones + 14 páginas) |
-| Vercel | Carlos (Hobby) | Carlos | proyecto creado 2026-10-19, Root Directory `web`; falta confirmar el primer build en Ready |
+| Sanity (proyecto `ntv5ihqf`, dataset `production`) | Carlos | Carlos | contenido migrado (197 publicaciones + 18 páginas); Studio en https://carlosconca.sanity.studio; webhook activo |
+| Vercel | Carlos (Hobby) | Carlos | producción en https://carlosconcaweb.vercel.app (Ready, 2026-11-02), Root Directory `web` |
 | DNS carlosconca.cl | — | Carlos | pendiente |
 
 ## Repo y acceso por SSH
@@ -61,17 +61,27 @@ nuevo y mínimo (solo Editor) para el cutover. Las lecturas del sitio no usan to
 
 Para el cutover (Fase 6) se repiten contra el proyecto definitivo de Carlos.
 
-## Webhook de revalidación (pendiente: necesita URL pública)
+## Webhook de revalidación (activo desde 2026-11-02)
 
-Cuando exista el sitio desplegado, en sanity.io/manage → API → Webhooks:
+Creado en Sanity (proyecto `ntv5ihqf`, id `lzsRqApprGGahRy9`, visible en sanity.io/manage → API → Webhooks):
 
-- URL: `https://<dominio>/api/revalidate/`, método POST
+- URL: `https://carlosconcaweb.vercel.app/api/revalidate/`, método POST
+  (al cambiar el DNS a carlosconca.cl, **actualizar la URL** del webhook)
 - Secret: el valor de `SANITY_REVALIDATE_SECRET` (en Vercel y en `.env.local`)
-- Dataset: `production`; disparar en create, update y delete
-- Filtro: `_type in ["publication","homePage","biografiaPage","investigacionPage","docenciaPage","publicacionesPage","contactoPage","siteSettings"]`
+- Dataset: `production`; create, update y delete; sin borradores
+- Filtro: `_type in ["publication","homePage","biografiaPage","investigacionPage","docenciaPage","publicacionesPage","contactoPage","privacidadPage","terminosPage","siteSettings"]`
 - Proyección: `{_type}`
 
+Si se agrega un tipo de documento nuevo, sumarlo a `PAGE_TYPES` (`web/lib/sanity/tags.ts`) **y** a este filtro.
 El endpoint devuelve 401 sin firma válida y 400 si el tipo no es uno de los anteriores.
+Probado creando y borrando un documento de prueba: 200 `{"revalidated":"privacidadPage"}` en ambas entregas.
+Se creó por la Management API (`POST api.sanity.io/v2021-10-04/hooks/projects/<id>` con `type: "document"` y
+`rule: {on, filter, projection}`; hace falta `apiVersion`).
+
+## Deploy del Studio
+
+`pnpm --filter studio run deploy` (con `run`: `pnpm deploy` es otro comando) y `SANITY_AUTH_TOKEN` en el
+entorno para no usar login interactivo. No pasar flags tras `--`: se toman como la carpeta de salida.
 
 ## Lighthouse CI (T10)
 

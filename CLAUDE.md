@@ -152,11 +152,10 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
      `docenciaPage.statement` es campo nuevo (el WP repetía la frase como 3.er párrafo de la intro).
    - `lib/seo/metadata.ts` (`pageMetadata`: canonical + hreflang) y `lib/seo/site.ts` (`SITE_URL`
      = https://carlosconca.cl, `doiFromLink`) los usan todas las páginas ya hechas.
-   - **Pendiente de despliegue:** `pnpm --filter studio deploy` para que el Studio muestre los campos
-     nuevos (`homePage.areasIntro/researchAreas`, `docenciaPage.statement`). Los datos ya están en
-     Sanity (parches dirigidos `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
-4. **Próximo, en este orden:** (a) crear el webhook de Sanity con la URL pública de Vercel (INFRA.md) y `pnpm --filter studio deploy`
-   (pedir permiso); (b) revisión del texto legal por el cliente; (c) bajar el tope de LCP de Lighthouse CI (hoy 4500 ms; objetivo 1,2 s, mediana lab móvil 2,0–3,7 s) y arreglar contraste/orden de encabezados en /publicaciones; (d) repetir los `curl` de redirects contra el preview/dominio.
+   - **Studio desplegado (2026-11-02)** con los campos nuevos (`homePage.areasIntro/researchAreas`,
+     `docenciaPage.statement`, privacidad y términos). Los datos ya están en Sanity (parches dirigidos
+     `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
+4. **Próximo, en este orden:** (a) ~~webhook de Sanity y deploy del Studio~~ hechos el 2026-11-02 (producción: https://carlosconcaweb.vercel.app); (b) revisión del texto legal por el cliente; (c) bajar el tope de LCP de Lighthouse CI (hoy 4500 ms; objetivo 1,2 s, mediana lab móvil 2,0–3,7 s) y arreglar contraste/orden de encabezados en /publicaciones; (d) repetir los `curl` de redirects contra el preview/dominio.
    El deploy de Vercel en producción ya fue confirmado por el usuario (2026-10-20).
    Pendiente de contenido/diseño: imagen OG; privacidad y términos; logo FCFM en modo oscuro; el
    contador de "Publicaciones" en la home (¿dinámico?); la publicación 198; ORCID/correo; la
@@ -178,7 +177,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
   `POST /api/revalidate` (firma con `next-sanity/webhook`; 401 / 400 / 200;
   `revalidateTag(tipo, 'max')`, el perfil es el 2.º argumento posicional según la
   doc de Next 16.3). `next.config.ts` carga el `.env.local` de la raíz con
-  `loadEnvConfig(..., forceReload)`. Falta crear el webhook en Sanity: necesita URL
+  `loadEnvConfig(..., forceReload)`. El webhook ya existe (2026-11-02; ver INFRA.md). Antes necesitaba URL
   pública (pasos en `INFRA.md`).
 - **T4 migración:** 197 publicaciones en Sanity, verificadas por categoría, década,
   enlaces y registro a registro (script idempotente, commit `sync`). 14 documentos de
@@ -228,7 +227,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 
 - **Publicación 198:** el WordPress muestra "Publicaciones (198)"; el JSON tiene 197.
   El usuario la verificará y la agregará desde el Studio como prueba de que el flujo
-  de edición funciona (y de que el webhook revalida, cuando exista).
+  de edición funciona (el webhook ya revalida: probado el 2026-11-02).
 - Revisar el contenido de cada área de investigación (acordeón; el primer párrafo
   del WP quedó como `summary`) y traducir las bajadas del timeline EN (el WP las
   tiene en español).
@@ -246,8 +245,7 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
 ### Pendiente del usuario
 
 Export de GSC/GA4 (línea base), Fase 0 sin hacer (`curl` de trailing slash en
-producción, PageSpeed/CrUX de las 12 URLs), DNS de Carlos, confirmar el primer deploy
-en Vercel y crear el webhook de Sanity (INFRA.md), diseño mobile en Figma (Fase 1, solo bloquea la Fase 4), y los assets
+producción, PageSpeed/CrUX de las 12 URLs), DNS de Carlos, diseño mobile en Figma (Fase 1, solo bloquea la Fase 4), y los assets
 que falten (`assets/README.md` lista lo que no está).
 
 ---
