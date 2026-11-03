@@ -155,25 +155,27 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    - **Studio desplegado (2026-11-02)** con los campos nuevos (`homePage.areasIntro/researchAreas`,
      `docenciaPage.statement`, privacidad y términos). Los datos ya están en Sanity (parches dirigidos
      `scripts/patch-*.ts`, idempotentes, no pisan ediciones).
-4. **Estado al 2026-11-02 — producción en https://carlosconcaweb.vercel.app (Ready).** Hecho: las 8 páginas
-   (6 + privacidad/términos), SEO/AEO (T9), redirects del WP, Lighthouse CI (T10), **Studio desplegado** y
-   **webhook de Sanity activo** (id `lzsRqApprGGahRy9`, probado: 200 `{revalidated}`). Los commits hasta `bc4fb02`
-   están en origin; el de docs `f9852b0` y los posteriores, locales hasta pedir push. Registros DNS y checklist
-   completo del cutover: **INFRA.md → "Migración de hosting"**.
+4. **Estado al 2026-11-03 — producción en https://carlosconcaweb.vercel.app (Ready); todo en origin (`c9a0963`).**
+   Hecho: las 8 páginas (6 + privacidad/términos), SEO/AEO (T9), redirects del WP, Lighthouse CI (T10), Studio desplegado, webhook de Sanity activo
+   (id `lzsRqApprGGahRy9`), **GA4** (`G-XZS2V3VY1Z`, solo se carga en carlosconca.cl/www; Signals y anuncios desactivados) y política de privacidad
+   actualizada ES/EN, accesibilidad de `/publicaciones` corregida, **línea base del WP** en `docs/baseline/` (GA4, Search Console 16 meses y Lighthouse móvil).
+   Vercel: dominios `carlosconca.cl` (principal, sin redirección) y `www` (308 → apex) ya agregados, "Invalid Configuration" hasta cambiar el DNS.
+   DNS: TTL de `A` apex y `CNAME` www bajado a 300 s el 2026-11-03 (confirmado con `dig`).
    **Falta, en este orden:**
-   (a) **Cutover a carlosconca.cl** (INFRA.md). Antes: línea base del WP (GSC/GA4, PageSpeed/CrUX de las 12 URLs), bajar TTL a 300 s,
-   decidir analítica. El hosting de Namecheap **no se cancela** (sirve el correo y es el respaldo).
-   (b) Contenido: revisión del texto legal por el cliente (borrador mío, y dice "escríbenos por Contacto" aunque Contacto no tiene correo),
-   correo y ORCID, publicación 198, imagen OG, contador de "Publicaciones" de la home (¿dinámico?), logo FCFM en modo oscuro,
-   categoría de "A robust modeling framework…" (JSON: Indexado; WP: WOS-ISI), bajadas del timeline EN sin traducir.
-   (c) Rendimiento: LCP de laboratorio móvil 2,4–3,4 s en el sitio nuevo contra 2,9–10,1 s del WordPress (`docs/baseline/`). La home es la peor: 2,2 s de
-   render delay con la imagen ya precargada (CPU simulada, no bytes). El objetivo de 1,2 s hay que medirlo en campo (CrUX/GSC) tras el cutover; el tope de `lighthouserc.cjs` es 4500 ms.
-   Accesibilidad de `/publicaciones` corregida (contraste de chips en claro y oscuro, `h2` antes de las tarjetas).
+   (a) **Cutover de DNS (planeado para 2026-11-04)**: seguir INFRA.md → "Migración de hosting". Valores: `A @ → 216.198.79.1`,
+   `CNAME www → f5014c9608ad74dd.vercel-dns-017.com.`; no tocar MX/SPF/DKIM/DMARC ni los subdominios. El hosting de Namecheap **no se cancela** (correo + respaldo).
+   Después: URL del webhook de Sanity → `https://carlosconca.cl/api/revalidate/`, `curl` de verificación, confirmar que GA4 registra, enviar `sitemap.xml` en Search Console
+   (hoy no hay ninguno enviado; el token de lectura no alcanza: se hace en la interfaz), correo de prueba.
+   (b) Contenido: revisión del texto legal por el cliente (borrador mío; dice "escríbenos por Contacto" aunque Contacto no tiene correo), correo y ORCID,
+   publicación 198, imagen OG, contador de "Publicaciones" de la home (¿dinámico?), logo FCFM en modo oscuro, categoría de "A robust modeling framework…"
+   (JSON: Indexado; WP: WOS-ISI), bajadas del timeline EN.
+   (c) Rendimiento: LCP de laboratorio móvil 2,4–3,4 s en el sitio nuevo contra 2,9–10,1 s del WordPress. La home tiene 2,2 s de render delay con la imagen ya
+   precargada (CPU simulada, no bytes). El objetivo de 1,2 s se mide en campo (CrUX/GSC) semanas después; el tope de `lighthouserc.cjs` es 4500 ms.
    (d) Confirmar que el CI de GitHub (con `pnpm lhci`) pasa: solo se probó en local.
-   (e) Tras el cutover: rotar el token de Sanity, comparar Core Web Vitals de campo, reenviar el sitemap.
-   Verificación visual hecha solo con Chrome headless (modo oscuro del sistema, sin Safari/iOS ni
-   dispositivo real); modo claro y teclado virtual sin probar. En mobile el texto de las páginas legales se vio cortado
-   a la derecha en una captura de 390 px (probable artefacto del headless): revisar en un móvil real.
+   (e) Tras el cutover: rotar el token de Sanity y **revocar el acceso OAuth de Google** (myaccount.google.com/permissions) y restablecer el secreto del cliente OAuth
+   `hyper-agencia-wordpress` (pasó por el chat); comparar Core Web Vitals de campo; vigilar GSC a 2, 4 y 8 semanas.
+   Verificación visual hecha solo con Chrome headless (modo oscuro del sistema, sin Safari/iOS ni dispositivo real); modo claro y teclado virtual sin probar.
+   En mobile el texto de las páginas legales se vio cortado a la derecha en una captura de 390 px (probable artefacto del headless): revisar en un móvil real.
 
 ### Hecho (T1–T4 del ROADMAP técnico)
 

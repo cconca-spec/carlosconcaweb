@@ -114,10 +114,10 @@ correo saliente. Aun así, enviar un correo de prueba a una cuenta externa tras 
 > inmediato (WordPress) si hay que volver atrás. Avisar a Carlos y a quien paga la factura.
 
 ### Antes (días previos)
-- [ ] **Línea base del WP** (solo posible mientras sigue en línea): export de GSC y GA4, y PageSpeed/CrUX de las 12 URLs (mobile y desktop), más los `curl -sI` de trailing slash. Guardar en `docs/baseline/`.
-- [ ] Decidir analítica: el sitio nuevo no tiene (GA4 o Vercel Analytics). Si se agrega, hacerlo antes del cambio y actualizar la política de privacidad.
-- [ ] Contenido visible al público: correo/ORCID de Carlos, publicación 198, revisión del texto legal por el cliente, imagen OG.
-- [ ] Confirmar que el build de `main` está en Ready y que el CI de GitHub (incluye `pnpm lhci`) pasa.
+- [x] **Línea base del WP**: GA4, Search Console y Lighthouse móvil de las 12 URLs en `docs/baseline/` (2026-11-03). Falta solo, si se quiere, CrUX de campo (necesita clave de API).
+- [x] Analítica: GA4 `G-XZS2V3VY1Z` instalado (solo en carlosconca.cl/www) y política de privacidad actualizada (2026-11-03).
+- [ ] Contenido visible al público (no bloquea el cambio): correo/ORCID de Carlos, publicación 198, revisión del texto legal por el cliente, imagen OG.
+- [x] Build de `main` en Ready (2026-11-03). [ ] Falta confirmar el CI de GitHub (incluye `pnpm lhci`, solo probado en local).
 - [x] TTL del `A` apex y del `CNAME` www bajado de 14400 a **300 s** el 2026-11-03 (confirmado con `dig` en el servidor autoritativo). Esperar mínimo 4 h, idealmente 24 h, antes de cambiar los valores.
 - [ ] Avisar a Carlos del plan y del riesgo del correo (ver arriba).
 
