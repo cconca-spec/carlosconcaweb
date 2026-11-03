@@ -1,6 +1,7 @@
 import { cacheLife } from 'next/cache'
 import { getTranslations } from 'next-intl/server'
 import type { Locale } from '@/lib/i18n/routing'
+import { Link } from '@/lib/i18n/navigation'
 import { getSiteSettings } from '@/lib/sanity/fetch'
 
 /** El año se cachea (cacheComponents no permite leer la hora en el prerender). */
@@ -84,8 +85,12 @@ export async function Footer({ locale }: { locale: Locale }) {
           </a>
         </p>
         <p className="flex gap-6 font-medium lg:pl-[clamp(1rem,2vw,2rem)]">
-          <span>{t('privacy')}</span>
-          <span>{t('terms')}</span>
+          <Link href="/privacidad" className="underline-offset-4 hover:underline">
+            {t('privacy')}
+          </Link>
+          <Link href="/terminos" className="underline-offset-4 hover:underline">
+            {t('terms')}
+          </Link>
         </p>
       </div>
     </footer>

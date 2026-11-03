@@ -7,9 +7,11 @@ import {
   DOCENCIA_PAGE_QUERY,
   HOME_PAGE_QUERY,
   INVESTIGACION_PAGE_QUERY,
+  PRIVACIDAD_PAGE_QUERY,
   PUBLICACIONES_PAGE_QUERY,
   PUBLICATIONS_QUERY,
   SITE_SETTINGS_QUERY,
+  TERMINOS_PAGE_QUERY,
 } from './queries'
 import type { Locale } from '@/lib/i18n/routing'
 import { PAGE_TYPES } from './tags'
@@ -71,6 +73,20 @@ export async function getContactoPage(locale: Locale) {
   cacheLife('max')
   cacheTag('contactoPage')
   return client.fetch(CONTACTO_PAGE_QUERY, { id: `contactoPage-${locale}` })
+}
+
+export async function getPrivacidadPage(locale: Locale) {
+  'use cache'
+  cacheLife('max')
+  cacheTag('privacidadPage')
+  return client.fetch(PRIVACIDAD_PAGE_QUERY, { id: `privacidadPage-${locale}` })
+}
+
+export async function getTerminosPage(locale: Locale) {
+  'use cache'
+  cacheLife('max')
+  cacheTag('terminosPage')
+  return client.fetch(TERMINOS_PAGE_QUERY, { id: `terminosPage-${locale}` })
 }
 
 export async function getContentDates() {

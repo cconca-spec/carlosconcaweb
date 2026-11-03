@@ -11,9 +11,11 @@ const TYPE_OF: Record<Href, PageType> = {
   '/docencia': 'docenciaPage',
   '/biografia': 'biografiaPage',
   '/contacto': 'contactoPage',
+  '/privacidad': 'privacidadPage',
+  '/terminos': 'terminosPage',
 }
 
-/** Una URL por página e idioma (12), cada una con sus alternativas hreflang. */
+/** Una URL por página e idioma (16), cada una con sus alternativas hreflang. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dates = await getContentDates()
   const updated = (href: Href, locale: string) => {

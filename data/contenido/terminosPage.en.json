@@ -1,0 +1,212 @@
+{
+  "_id": "terminosPage-en",
+  "_type": "terminosPage",
+  "language": "en",
+  "heading": "Terms and conditions",
+  "updated": "2026-11-02",
+  "body": [
+    {
+      "_key": "b6bdecfce5",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "28dc9dac46",
+          "_type": "span",
+          "text": "By using this site you accept the conditions described below. If you do not agree with them, please do not use it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "120646b2ac",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "004df1c91b",
+          "_type": "span",
+          "text": "Purpose of the site",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "88f74a1868",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "cdc6ebb8da",
+          "_type": "span",
+          "text": "The site is informational and academic: it presents Carlos Conca's career, research areas, teaching and publications.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "adf2d2f536",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "fcb591e0dc",
+          "_type": "span",
+          "text": "Intellectual property",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "e0dde72208",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "f0d35b9732",
+          "_type": "span",
+          "text": "The texts, images and other original content of this site belong to their authors and are protected by intellectual property law. You may quote them and share links, citing the source. For any other use, request authorization through the Contact page.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "ce49c54032",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "01503533d8",
+          "_type": "span",
+          "text": "The articles and books listed under Publications belong to their respective journals and publishers. The site only presents the bibliographic reference and, where available, a link to the original text.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "fd3f987d0f",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "d97dac7c90",
+          "_type": "span",
+          "text": "Accuracy of information",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "b706c464e7",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "780de7f954",
+          "_type": "span",
+          "text": "We do our best to keep the information correct and up to date, but it may contain errors or omissions. If you find one, we would appreciate your letting us know.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "1981f82309",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "723ca1eaa8",
+          "_type": "span",
+          "text": "External links",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "54eb09a95c",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "97abe4e154",
+          "_type": "span",
+          "text": "The site links to third-party pages for convenience. We do not control their content and are not responsible for it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "5427618336",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "fd7685dc69",
+          "_type": "span",
+          "text": "Limitation of liability",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "57c16ebb4f",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "337a7bc8e5",
+          "_type": "span",
+          "text": "The site is provided as is, with no guarantee of continuous availability. We are not liable for any damage arising from its use or from the inability to use it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "5e819cd1d4",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "e3d2482a4c",
+          "_type": "span",
+          "text": "Changes and governing law",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "c36a762b57",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "0988f91ce5",
+          "_type": "span",
+          "text": "We may modify these terms; the date of the latest update appears at the top of the page. They are governed by the laws of the Republic of Chile.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Terms and conditions – Carlos Conca",
+    "metaDescription": "Terms of use of Carlos Conca's website."
+  },
+  "_review": [
+    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. No dice nada que no sea verificable en el código: sin formularios, cuentas, analítica ni cookies de seguimiento; localStorage solo guarda tema y vista de publicaciones."
+  ]
+}

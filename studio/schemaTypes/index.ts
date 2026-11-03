@@ -7,7 +7,9 @@ import {
   docenciaPage,
   homePage,
   investigacionPage,
+  privacidadPage,
   publicacionesPage,
+  terminosPage,
 } from './documents/pages'
 import { siteSettings } from './documents/siteSettings'
 
@@ -25,6 +27,8 @@ export const schemaTypes = [
   docenciaPage,
   publicacionesPage,
   contactoPage,
+  privacidadPage,
+  terminosPage,
   siteSettings,
 ]
 
@@ -36,5 +40,7 @@ export const LOCALIZED_TYPES = [
   'docenciaPage',
   'publicacionesPage',
   'contactoPage',
+  'privacidadPage',
+  'terminosPage',
   'siteSettings',
 ] as const

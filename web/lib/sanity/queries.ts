@@ -14,6 +14,8 @@ export const INVESTIGACION_PAGE_QUERY = defineQuery(`*[_id == $id && _type == "i
 export const DOCENCIA_PAGE_QUERY = defineQuery(`*[_id == $id && _type == "docenciaPage"][0]`)
 export const PUBLICACIONES_PAGE_QUERY = defineQuery(`*[_id == $id && _type == "publicacionesPage"][0]`)
 export const CONTACTO_PAGE_QUERY = defineQuery(`*[_id == $id && _type == "contactoPage"][0]`)
+export const PRIVACIDAD_PAGE_QUERY = defineQuery(`*[_id == $id && _type == "privacidadPage"][0]`)
+export const TERMINOS_PAGE_QUERY = defineQuery(`*[_id == $id && _type == "terminosPage"][0]`)
 export const SITE_SETTINGS_QUERY = defineQuery(`*[_id == $id && _type == "siteSettings"][0]{
   ...,
   "cvUrl": cv.asset->url

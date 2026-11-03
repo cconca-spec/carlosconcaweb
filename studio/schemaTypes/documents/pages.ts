@@ -336,3 +336,75 @@ export const contactoPage = defineType({
   preview: localizedPreview('Contacto'),
 })
 
+
+/** Cuerpo de texto largo de las páginas legales: títulos, listas, negrita y enlaces. */
+const legalBody = defineField({
+  name: 'body',
+  title: 'Texto',
+  description:
+    'El texto completo de la página. Use "Título" para separar secciones y las viñetas para las listas.',
+  type: 'array',
+  of: [
+    defineArrayMember({
+      type: 'block',
+      styles: [
+        { title: 'Párrafo', value: 'normal' },
+        { title: 'Título de sección', value: 'h2' },
+        { title: 'Subtítulo', value: 'h3' },
+      ],
+      lists: [
+        { title: 'Viñetas', value: 'bullet' },
+        { title: 'Numerada', value: 'number' },
+      ],
+      marks: {
+        decorators: [
+          { title: 'Negrita', value: 'strong' },
+          { title: 'Cursiva', value: 'em' },
+        ],
+        annotations: [
+          {
+            name: 'link',
+            type: 'object',
+            title: 'Enlace',
+            fields: [defineField({ name: 'href', title: 'Dirección (URL)', type: 'url' })],
+          },
+        ],
+      },
+    }),
+  ],
+})
+
+const legalUpdated = defineField({
+  name: 'updated',
+  title: 'Última actualización',
+  description: 'Fecha que se muestra al inicio de la página. Cámbiela cada vez que modifique el texto.',
+  type: 'date',
+})
+
+export const privacidadPage = defineType({
+  name: 'privacidadPage',
+  title: 'Políticas de privacidad',
+  type: 'document',
+  fields: [
+    languageField,
+    defineField({ name: 'heading', title: 'Título de página', type: 'string' }),
+    legalUpdated,
+    legalBody,
+    defineField({ name: 'seo', type: 'seo' }),
+  ],
+  preview: localizedPreview('Políticas de privacidad'),
+})
+
+export const terminosPage = defineType({
+  name: 'terminosPage',
+  title: 'Términos y condiciones',
+  type: 'document',
+  fields: [
+    languageField,
+    defineField({ name: 'heading', title: 'Título de página', type: 'string' }),
+    legalUpdated,
+    legalBody,
+    defineField({ name: 'seo', type: 'seo' }),
+  ],
+  preview: localizedPreview('Términos y condiciones'),
+})

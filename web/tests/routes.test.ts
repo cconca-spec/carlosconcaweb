@@ -3,7 +3,7 @@ import { routing } from '@/lib/i18n/routing'
 import { LEGACY_REDIRECTS } from '@/lib/redirects'
 
 /**
- * Contrato con el SEO existente (invariante 1 de CLAUDE.md): las 12 URLs
+ * Contrato con el SEO existente (invariante 1 de CLAUDE.md): las 16 URLs
  * indexadas responden 200 sin redirect intermedio. Se prueba contra un
  * servidor real (`next start`), con redirects en modo manual.
  */
@@ -16,6 +16,8 @@ const ES = [
   '/docencia/',
   '/biografia/',
   '/contacto/',
+  '/privacidad/',
+  '/terminos/',
 ]
 const EN = [
   '/en/',
@@ -24,6 +26,8 @@ const EN = [
   '/en/teaching/',
   '/en/biography/',
   '/en/contact/',
+  '/en/privacy/',
+  '/en/terms/',
 ]
 const URLS = [
   ...ES.map((path) => ({ path, lang: 'es' })),
@@ -34,7 +38,7 @@ const base = () => process.env.ROUTES_BASE_URL!
 const get = (path: string) =>
   fetch(base() + path, { redirect: 'manual' })
 
-describe('las 12 URLs', () => {
+describe('las 16 URLs', () => {
   it('son exactamente las que define routing.ts', () => {
     const fromRouting = Object.values(routing.pathnames).flatMap((p) => {
       const { es, en } = p as { es: string; en: string }

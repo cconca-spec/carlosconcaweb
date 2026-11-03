@@ -3,10 +3,27 @@ import { getPathname } from '@/lib/i18n/navigation'
 import type { Locale } from '@/lib/i18n/routing'
 import { SITE_URL } from './site'
 
-export type Href = '/' | '/publicaciones' | '/investigacion' | '/docencia' | '/biografia' | '/contacto'
+export type Href =
+  | '/'
+  | '/publicaciones'
+  | '/investigacion'
+  | '/docencia'
+  | '/biografia'
+  | '/contacto'
+  | '/privacidad'
+  | '/terminos'
 
-/** Las 6 páginas, en el orden del menú. */
-export const PAGES: Href[] = ['/', '/publicaciones', '/investigacion', '/docencia', '/biografia', '/contacto']
+/** Las 8 páginas: las 6 del menú, en su orden, y las 2 legales del footer. */
+export const PAGES: Href[] = [
+  '/',
+  '/publicaciones',
+  '/investigacion',
+  '/docencia',
+  '/biografia',
+  '/contacto',
+  '/privacidad',
+  '/terminos',
+]
 
 /**
  * URL absoluta de una página en un idioma. El slug traducido viene de next-intl; la barra final se

@@ -39,6 +39,8 @@ export const structure: StructureResolver = (S) =>
       localizedSingleton(S, 'docenciaPage', 'Docencia'),
       localizedSingleton(S, 'biografiaPage', 'Biografía'),
       localizedSingleton(S, 'contactoPage', 'Contacto'),
+      localizedSingleton(S, 'privacidadPage', 'Políticas de privacidad'),
+      localizedSingleton(S, 'terminosPage', 'Términos y condiciones'),
       S.divider(),
       localizedSingleton(S, 'siteSettings', 'Configuración del sitio'),
     ])

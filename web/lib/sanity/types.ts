@@ -121,6 +121,20 @@ export type ContactoPageReference = {
   [internalGroqTypeReferenceTo]?: "contactoPage";
 };
 
+export type PrivacidadPageReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "privacidadPage";
+};
+
+export type TerminosPageReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "terminosPage";
+};
+
 export type SiteSettingsReference = {
   _ref: string;
   _type: "reference";
@@ -137,6 +151,8 @@ export type InternationalizedArrayReferenceValue = {
     | DocenciaPageReference
     | PublicacionesPageReference
     | ContactoPageReference
+    | PrivacidadPageReference
+    | TerminosPageReference
     | SiteSettingsReference;
   language?: string;
 };
@@ -172,6 +188,66 @@ export type SiteSettings = {
   };
   sameAs?: Array<string>;
   defaultSeo?: Seo;
+};
+
+export type TerminosPage = {
+  _id: string;
+  _type: "terminosPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  language?: string;
+  heading?: string;
+  updated?: string;
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h2" | "h3";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  seo?: Seo;
+};
+
+export type PrivacidadPage = {
+  _id: string;
+  _type: "privacidadPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  language?: string;
+  heading?: string;
+  updated?: string;
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h2" | "h3";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  seo?: Seo;
 };
 
 export type ContactoPage = {
@@ -595,10 +671,14 @@ export type AllSanitySchemaTypes =
   | DocenciaPageReference
   | PublicacionesPageReference
   | ContactoPageReference
+  | PrivacidadPageReference
+  | TerminosPageReference
   | SiteSettingsReference
   | InternationalizedArrayReferenceValue
   | SanityFileAssetReference
   | SiteSettings
+  | TerminosPage
+  | PrivacidadPage
   | ContactoPage
   | PublicacionesPage
   | DocenciaPage
@@ -940,6 +1020,72 @@ export type CONTACTO_PAGE_QUERY_RESULT = {
 } | null;
 
 // Source: lib/sanity/queries.ts
+// Variable: PRIVACIDAD_PAGE_QUERY
+// Query: *[_id == $id && _type == "privacidadPage"][0]
+export type PRIVACIDAD_PAGE_QUERY_RESULT = {
+  _id: string;
+  _type: "privacidadPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  language?: string;
+  heading?: string;
+  updated?: string;
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "h2" | "h3" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  seo?: Seo;
+} | null;
+
+// Source: lib/sanity/queries.ts
+// Variable: TERMINOS_PAGE_QUERY
+// Query: *[_id == $id && _type == "terminosPage"][0]
+export type TERMINOS_PAGE_QUERY_RESULT = {
+  _id: string;
+  _type: "terminosPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  language?: string;
+  heading?: string;
+  updated?: string;
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "h2" | "h3" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  seo?: Seo;
+} | null;
+
+// Source: lib/sanity/queries.ts
 // Variable: SITE_SETTINGS_QUERY
 // Query: *[_id == $id && _type == "siteSettings"][0]{  ...,  "cvUrl": cv.asset->url}
 export type SITE_SETTINGS_QUERY_RESULT = {
@@ -1000,6 +1146,11 @@ export type CONTENT_DATES_QUERY_RESULT = {
         _updatedAt: string;
       }
     | {
+        _type: "privacidadPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
         _type: "publicacionesPage";
         language: string | null;
         _updatedAt: string;
@@ -1025,6 +1176,11 @@ export type CONTENT_DATES_QUERY_RESULT = {
         _updatedAt: string;
       }
     | {
+        _type: "terminosPage";
+        language: string | null;
+        _updatedAt: string;
+      }
+    | {
         _type: "translation.metadata";
         language: null;
         _updatedAt: string;
@@ -1043,6 +1199,8 @@ declare global {
     '*[_id == $id && _type == "docenciaPage"][0]': DOCENCIA_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "publicacionesPage"][0]': PUBLICACIONES_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "contactoPage"][0]': CONTACTO_PAGE_QUERY_RESULT;
+    '*[_id == $id && _type == "privacidadPage"][0]': PRIVACIDAD_PAGE_QUERY_RESULT;
+    '*[_id == $id && _type == "terminosPage"][0]': TERMINOS_PAGE_QUERY_RESULT;
     '*[_id == $id && _type == "siteSettings"][0]{\n  ...,\n  "cvUrl": cv.asset->url\n}': SITE_SETTINGS_QUERY_RESULT;
     '{\n  "pages": *[_type in $pageTypes]{ _type, language, _updatedAt },\n  "publications": *[_type == "publication"] | order(_updatedAt desc)[0]._updatedAt\n}': CONTENT_DATES_QUERY_RESULT;
   }

@@ -13,14 +13,14 @@ const data: LlmsData = {
 }
 
 describe('llms', () => {
-  it('llms.txt enlaza las 12 URLs con slug traducido y barra final', () => {
+  it('llms.txt enlaza las 16 URLs con slug traducido y barra final', () => {
     const t = buildLlmsTxt(data)
     expect(t.startsWith('# Carlos Conca')).toBe(true)
     expect(t).toContain('https://carlosconca.cl/publicaciones/')
     expect(t).toContain('https://carlosconca.cl/en/publications/')
     expect(t).toContain('https://carlosconca.cl/en/contact/')
     expect(t.match(/\]\(https:\/\/carlosconca\.cl[^)]*[^/]\)/g)).toEqual(['](https://carlosconca.cl/llms-full.txt)'])
-    expect(t.match(/\]\(https:\/\/carlosconca\.cl\/[^)]*\)/g)?.length).toBe(13) // 12 páginas + llms-full
+    expect(t.match(/\]\(https:\/\/carlosconca\.cl\/[^)]*\)/g)?.length).toBe(17) // 16 páginas + llms-full
   })
 
   it('llms-full.txt incluye áreas con ancla y publicaciones por año descendente', () => {

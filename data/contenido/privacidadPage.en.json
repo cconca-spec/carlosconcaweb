@@ -1,0 +1,202 @@
+{
+  "_id": "privacidadPage-en",
+  "_type": "privacidadPage",
+  "language": "en",
+  "heading": "Privacy policy",
+  "updated": "2026-11-02",
+  "body": [
+    {
+      "_key": "a1049b1417",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "96c5e2de7a",
+          "_type": "span",
+          "text": "This site is the academic presentation of Carlos Conca, 2003 Chilean National Prize in Exact Sciences. It is an informational site: it has no user accounts, sells nothing and includes no forms. For that reason it collects very little data.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "3793a00e41",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "dca98719ca",
+          "_type": "span",
+          "text": "What information is collected",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "6fe9fa48a4",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "3e0d325cad",
+          "_type": "span",
+          "text": "The site does not ask for personal data and does not use analytics or advertising tools. The only things generated when you visit it are:",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "2d2cc0d020",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "ca368098ff",
+          "_type": "span",
+          "text": "Technical server logs (for example, IP address, date and requested page), which the site's hosting provider keeps for a limited time for security and operation.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_key": "de62de640e",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "037a9b04d2",
+          "_type": "span",
+          "text": "Preferences stored in your own browser, such as light or dark theme and the list or card view on Publications. They stay on your device, are not sent to any server, and you can delete them from your browser settings.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_key": "5bafe63996",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "0eed4bfa5b",
+          "_type": "span",
+          "text": "Cookies",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "cf09273e12",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "49e997610b",
+          "_type": "span",
+          "text": "The site does not use tracking or advertising cookies.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "a7d413dd68",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "c2c4acfa91",
+          "_type": "span",
+          "text": "Links to other sites",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "3b129451e6",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "967759089a",
+          "_type": "span",
+          "text": "Some pages link to external sites (for example, Wikipedia, Google Scholar, Academia, universities, journals and publishers). Each has its own privacy policy, over which this site has no control.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "c7f221fe06",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "c9602c3626",
+          "_type": "span",
+          "text": "Your rights",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "e57113287c",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "b2a6fec22c",
+          "_type": "span",
+          "text": "If you believe personal data about you is processed in connection with this site, you may request access, correction or deletion under Chilean privacy law. Write to us through the channels listed on the Contact page.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "6b83487563",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "2b4e778548",
+          "_type": "span",
+          "text": "Changes",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "b54fb860a9",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "174f6a715e",
+          "_type": "span",
+          "text": "These policies may be updated. The date of the latest change appears at the top of this page.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Privacy policy – Carlos Conca",
+    "metaDescription": "What information this site collects, how it is used and what rights you have."
+  },
+  "_review": [
+    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. No dice nada que no sea verificable en el código: sin formularios, cuentas, analítica ni cookies de seguimiento; localStorage solo guarda tema y vista de publicaciones."
+  ]
+}

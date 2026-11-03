@@ -1,0 +1,212 @@
+{
+  "_id": "terminosPage-es",
+  "_type": "terminosPage",
+  "language": "es",
+  "heading": "Términos y condiciones",
+  "updated": "2026-11-02",
+  "body": [
+    {
+      "_key": "e68997d595",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "a5faf8b181",
+          "_type": "span",
+          "text": "Al usar este sitio aceptas las condiciones que se describen a continuación. Si no estás de acuerdo con ellas, te pedimos no utilizarlo.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "59aa47f848",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "847b5a2f52",
+          "_type": "span",
+          "text": "Propósito del sitio",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "529f2d385f",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "1374dd990b",
+          "_type": "span",
+          "text": "El sitio tiene fines informativos y académicos: presenta la trayectoria, las líneas de investigación, la docencia y las publicaciones de Carlos Conca.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "d7994bf672",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "4e481059e0",
+          "_type": "span",
+          "text": "Propiedad intelectual",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "ea7789dcc4",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "6847071240",
+          "_type": "span",
+          "text": "Los textos, imágenes y demás contenidos propios del sitio pertenecen a sus autores y están protegidos por la legislación de propiedad intelectual. Puedes citarlos y compartir los enlaces indicando la fuente. Para cualquier otro uso, solicita autorización por la página de Contacto.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "e273352fef",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "211f0be4ee",
+          "_type": "span",
+          "text": "Los artículos y libros listados en Publicaciones pertenecen a sus respectivas revistas y editoriales. El sitio solo presenta la referencia bibliográfica y, cuando existe, un enlace al texto original.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "d6f173bf03",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "77ebc5410e",
+          "_type": "span",
+          "text": "Exactitud de la información",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "fbc1e15100",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "21b615d0dd",
+          "_type": "span",
+          "text": "Hacemos lo posible por mantener la información correcta y actualizada, pero puede contener errores u omisiones. Si encuentras alguno, agradecemos que nos lo informes.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "b452c8a675",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "088cd6be9c",
+          "_type": "span",
+          "text": "Enlaces externos",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "88e7b78162",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "c987661114",
+          "_type": "span",
+          "text": "El sitio enlaza a páginas de terceros por conveniencia. No controlamos su contenido ni somos responsables de él.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "f57e4f0fd0",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "6dc54ec03c",
+          "_type": "span",
+          "text": "Limitación de responsabilidad",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "c721f15390",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "25f0f3b007",
+          "_type": "span",
+          "text": "El sitio se ofrece tal como está, sin garantías de disponibilidad continua. No nos hacemos responsables de perjuicios derivados de su uso o de la imposibilidad de usarlo.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "4a92e6ce77",
+      "_type": "block",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "3237efb0e3",
+          "_type": "span",
+          "text": "Cambios y legislación aplicable",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "e2df98f993",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "cc3d411b3a",
+          "_type": "span",
+          "text": "Podemos modificar estos términos; la fecha de la última actualización aparece al inicio de la página. Se rigen por las leyes de la República de Chile.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Términos y condiciones – Carlos Conca",
+    "metaDescription": "Condiciones de uso del sitio web de Carlos Conca."
+  },
+  "_review": [
+    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. No dice nada que no sea verificable en el código: sin formularios, cuentas, analítica ni cookies de seguimiento; localStorage solo guarda tema y vista de publicaciones."
+  ]
+}

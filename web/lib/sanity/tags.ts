@@ -6,6 +6,8 @@ export const PAGE_TYPES = [
   'docenciaPage',
   'publicacionesPage',
   'contactoPage',
+  'privacidadPage',
+  'terminosPage',
 ] as const
 
 export const CACHE_TAGS = ['publication', ...PAGE_TYPES, 'siteSettings'] as const

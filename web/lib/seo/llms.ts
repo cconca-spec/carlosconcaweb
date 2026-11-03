@@ -35,6 +35,8 @@ const NAV_KEY: Record<Href, string> = {
   '/docencia': 'teaching',
   '/biografia': 'biography',
   '/contacto': 'contact',
+  '/privacidad': 'privacy',
+  '/terminos': 'terms',
 }
 
 const PAGE_NOTE: Record<Href, string> = {
@@ -44,6 +46,8 @@ const PAGE_NOTE: Record<Href, string> = {
   '/docencia': 'Doctorados dirigidos, ingenieros, postdocs y programas.',
   '/biografia': 'Biografía, premios y distinciones.',
   '/contacto': 'Perfiles institucionales y académicos.',
+  '/privacidad': 'Políticas de privacidad del sitio.',
+  '/terminos': 'Términos y condiciones de uso del sitio.',
 }
 
 const text = (blocks?: Block[]) =>

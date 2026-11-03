@@ -22,6 +22,8 @@
     "teaching": "Docencia",
     "biography": "Biografía",
     "contact": "Contacto",
+    "privacy": "Políticas de privacidad",
+    "terms": "Términos y condiciones",
     "primary": "Navegación principal",
     "language": "Idioma",
     "themeToLight": "Cambiar a modo claro",
@@ -55,6 +57,9 @@
     "areasList": "Áreas de investigación",
     "timelineTitle": "Timeline destacado",
     "viewBiography": "Ver biografía"
+  },
+  "Legal": {
+    "updated": "Última actualización"
   },
   "Contact": {
     "external": "(se abre en otra pestaña)",

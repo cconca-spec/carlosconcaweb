@@ -22,6 +22,8 @@
     "teaching": "Teaching",
     "biography": "Biography",
     "contact": "Contact",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
     "primary": "Main navigation",
     "language": "Language",
     "themeToLight": "Switch to light mode",
@@ -55,6 +57,9 @@
     "areasList": "Research areas",
     "timelineTitle": "Featured timeline",
     "viewBiography": "View biography"
+  },
+  "Legal": {
+    "updated": "Last updated"
   },
   "Contact": {
     "external": "(opens in a new tab)",
