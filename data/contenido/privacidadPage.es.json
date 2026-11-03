@@ -3,7 +3,7 @@
   "_type": "privacidadPage",
   "language": "es",
   "heading": "Políticas de privacidad",
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "body": [
     {
       "_key": "65bf68c7a3",
@@ -34,29 +34,29 @@
       ]
     },
     {
-      "_key": "daa729e997",
+      "_key": "c37dd0a8c0",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "71b6313297",
+          "_key": "ecf9b54e8a",
           "_type": "span",
-          "text": "El sitio no te pide datos personales y no usa herramientas de analítica ni de publicidad. Lo único que se genera al visitarlo es:",
+          "text": "El sitio no te pide datos personales y no usa publicidad. Lo único que se genera al visitarlo es:",
           "marks": []
         }
       ]
     },
     {
-      "_key": "aae9c709da",
+      "_key": "84d4c49ead",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "a42a568bf3",
+          "_key": "9d2ea34073",
           "_type": "span",
-          "text": "Registros técnicos del servidor (por ejemplo, dirección IP, fecha y página solicitada), que el proveedor de alojamiento del sitio conserva por un tiempo limitado para su seguridad y funcionamiento.",
+          "text": "Estadísticas de visitas, medidas con Google Analytics 4 (Google LLC): cuántas personas visitan el sitio, qué páginas ven, desde qué país, con qué tipo de dispositivo y de dónde llegaron. Son datos agregados que nos ayudan a saber qué contenido interesa; no usamos tu nombre ni tu correo, y las funciones de publicidad y personalización de anuncios de Google están desactivadas.",
           "marks": []
         }
       ],
@@ -64,13 +64,29 @@
       "level": 1
     },
     {
-      "_key": "d5a8a78a51",
+      "_key": "445abc5310",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "a854544539",
+          "_key": "43cbd97945",
+          "_type": "span",
+          "text": "Registros técnicos del servidor (por ejemplo, dirección IP, fecha y página solicitada), que el proveedor de alojamiento del sitio (Vercel Inc.) conserva por un tiempo limitado para su seguridad y funcionamiento.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_key": "7f8c817f0d",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "198d28378c",
           "_type": "span",
           "text": "Preferencias guardadas en tu propio navegador, como el tema claro u oscuro y la vista de lista o tarjetas en Publicaciones. Se almacenan solo en tu dispositivo, no se envían a ningún servidor y puedes borrarlas desde la configuración de tu navegador.",
           "marks": []
@@ -80,13 +96,13 @@
       "level": 1
     },
     {
-      "_key": "223c4ea69e",
+      "_key": "a4962cd92d",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "2fee1644e3",
+          "_key": "aee0f1d9b2",
           "_type": "span",
           "text": "Cookies",
           "marks": []
@@ -94,27 +110,27 @@
       ]
     },
     {
-      "_key": "d8e6c4363e",
+      "_key": "d3c1bd4315",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "97d271c359",
+          "_key": "f532a2b661",
           "_type": "span",
-          "text": "El sitio no utiliza cookies de seguimiento ni de publicidad.",
+          "text": "Google Analytics usa cookies propias (_ga y _ga_*), con una vigencia de hasta dos años, para distinguir una visita de otra. No se usan con fines publicitarios. Puedes bloquearlas en la configuración de tu navegador o instalar el complemento de inhabilitación de Google Analytics (tools.google.com/dlpage/gaoptout). El sitio no usa otras cookies de seguimiento ni de publicidad.",
           "marks": []
         }
       ]
     },
     {
-      "_key": "05177888fd",
+      "_key": "442c4ee71a",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "e237f9053b",
+          "_key": "c7359d08ba",
           "_type": "span",
           "text": "Enlaces a otros sitios",
           "marks": []
@@ -122,13 +138,13 @@
       ]
     },
     {
-      "_key": "d88a90e364",
+      "_key": "d9aa87d698",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "ac90fbe3b5",
+          "_key": "a95d51a115",
           "_type": "span",
           "text": "Algunas páginas enlazan a sitios externos (por ejemplo, Wikipedia, Google Scholar, Academia, universidades, revistas y editoriales). Cada uno tiene sus propias políticas de privacidad, sobre las que este sitio no tiene control.",
           "marks": []
@@ -136,13 +152,13 @@
       ]
     },
     {
-      "_key": "c869771c35",
+      "_key": "e0dd738eb3",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "5f34418fe9",
+          "_key": "c49858ebe8",
           "_type": "span",
           "text": "Tus derechos",
           "marks": []
@@ -150,13 +166,13 @@
       ]
     },
     {
-      "_key": "a17d05f6d6",
+      "_key": "2f991a3d70",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "54cf3a4b01",
+          "_key": "ef33661acf",
           "_type": "span",
           "text": "Si crees que se tratan datos personales tuyos en relación con este sitio, puedes solicitar su acceso, rectificación o eliminación, conforme a la legislación chilena sobre protección de la vida privada. Escríbenos por los medios indicados en la página de Contacto.",
           "marks": []
@@ -164,13 +180,13 @@
       ]
     },
     {
-      "_key": "6061803b97",
+      "_key": "2dae12b357",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "148f513d0d",
+          "_key": "82b6f857d1",
           "_type": "span",
           "text": "Cambios",
           "marks": []
@@ -178,13 +194,13 @@
       ]
     },
     {
-      "_key": "85525b52b6",
+      "_key": "f787a2e93a",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "a63fe1addf",
+          "_key": "f0e345dd6c",
           "_type": "span",
           "text": "Estas políticas pueden actualizarse. La fecha de la última modificación aparece al inicio de esta página.",
           "marks": []
@@ -197,6 +213,6 @@
     "metaDescription": "Qué información recoge este sitio, cómo se usa y qué derechos tienes."
   },
   "_review": [
-    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. No dice nada que no sea verificable en el código: sin formularios, cuentas, analítica ni cookies de seguimiento; localStorage solo guarda tema y vista de publicaciones."
+    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. Verificable en el código: sin formularios, cuentas ni publicidad; GA4 (G-XZS2V3VY1Z) con Google Signals y personalización de anuncios desactivados, solo en carlosconca.cl; localStorage guarda tema y vista de publicaciones. Si se cambia la analítica, actualizar este texto."
   ]
 }

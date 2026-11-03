@@ -3,6 +3,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Zalando_Sans } from 'next/font/google'
+import { Analytics } from '@/components/analytics'
 import { ThemeSync } from '@/components/theme-sync'
 import { Footer } from '@/components/footer'
 import { PersonJsonLd } from '@/components/seo/person-json-ld'
@@ -51,6 +52,7 @@ export default async function LocaleLayout({
           {children}
           <Footer locale={locale} />
           <PersonJsonLd locale={locale} />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

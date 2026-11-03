@@ -3,16 +3,16 @@
   "_type": "privacidadPage",
   "language": "en",
   "heading": "Privacy policy",
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "body": [
     {
-      "_key": "a1049b1417",
+      "_key": "7b94ba4d4f",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "96c5e2de7a",
+          "_key": "3f8f396c60",
           "_type": "span",
           "text": "This site is the academic presentation of Carlos Conca, 2003 Chilean National Prize in Exact Sciences. It is an informational site: it has no user accounts, sells nothing and includes no forms. For that reason it collects very little data.",
           "marks": []
@@ -20,13 +20,13 @@
       ]
     },
     {
-      "_key": "3793a00e41",
+      "_key": "8ba6cf81a9",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "dca98719ca",
+          "_key": "31109eb644",
           "_type": "span",
           "text": "What information is collected",
           "marks": []
@@ -34,29 +34,29 @@
       ]
     },
     {
-      "_key": "6fe9fa48a4",
+      "_key": "e328d2de19",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "3e0d325cad",
+          "_key": "f81a42de5f",
           "_type": "span",
-          "text": "The site does not ask for personal data and does not use analytics or advertising tools. The only things generated when you visit it are:",
+          "text": "The site does not ask for personal data and does not use advertising. The only things generated when you visit it are:",
           "marks": []
         }
       ]
     },
     {
-      "_key": "2d2cc0d020",
+      "_key": "c6fe6e8437",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "ca368098ff",
+          "_key": "be837ace18",
           "_type": "span",
-          "text": "Technical server logs (for example, IP address, date and requested page), which the site's hosting provider keeps for a limited time for security and operation.",
+          "text": "Visit statistics, measured with Google Analytics 4 (Google LLC): how many people visit the site, which pages they view, from which country, on what kind of device and where they came from. This is aggregated data that helps us see what content is of interest; we do not use your name or email, and Google's advertising and ad personalization features are turned off.",
           "marks": []
         }
       ],
@@ -64,13 +64,29 @@
       "level": 1
     },
     {
-      "_key": "de62de640e",
+      "_key": "a9d95ac6b5",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "037a9b04d2",
+          "_key": "425c50a9d6",
+          "_type": "span",
+          "text": "Technical server logs (for example, IP address, date and requested page), which the site's hosting provider (Vercel Inc.) keeps for a limited time for security and operation.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_key": "5e54eb37e5",
+      "_type": "block",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_key": "a32a1496ee",
           "_type": "span",
           "text": "Preferences stored in your own browser, such as light or dark theme and the list or card view on Publications. They stay on your device, are not sent to any server, and you can delete them from your browser settings.",
           "marks": []
@@ -80,13 +96,13 @@
       "level": 1
     },
     {
-      "_key": "5bafe63996",
+      "_key": "cbd62cd0a0",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "0eed4bfa5b",
+          "_key": "ab687bc7a1",
           "_type": "span",
           "text": "Cookies",
           "marks": []
@@ -94,27 +110,27 @@
       ]
     },
     {
-      "_key": "cf09273e12",
+      "_key": "3acc0d489e",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "49e997610b",
+          "_key": "ab4e7f6c54",
           "_type": "span",
-          "text": "The site does not use tracking or advertising cookies.",
+          "text": "Google Analytics uses first-party cookies (_ga and _ga_*), valid for up to two years, to tell one visit from another. They are not used for advertising. You can block them in your browser settings or install the Google Analytics opt-out add-on (tools.google.com/dlpage/gaoptout). The site does not use any other tracking or advertising cookies.",
           "marks": []
         }
       ]
     },
     {
-      "_key": "a7d413dd68",
+      "_key": "1ebf3f93e4",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "c2c4acfa91",
+          "_key": "29ffbe5b24",
           "_type": "span",
           "text": "Links to other sites",
           "marks": []
@@ -122,13 +138,13 @@
       ]
     },
     {
-      "_key": "3b129451e6",
+      "_key": "9a279f44a4",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "967759089a",
+          "_key": "956f2fc7a3",
           "_type": "span",
           "text": "Some pages link to external sites (for example, Wikipedia, Google Scholar, Academia, universities, journals and publishers). Each has its own privacy policy, over which this site has no control.",
           "marks": []
@@ -136,13 +152,13 @@
       ]
     },
     {
-      "_key": "c7f221fe06",
+      "_key": "50125850f4",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "c9602c3626",
+          "_key": "02592ff623",
           "_type": "span",
           "text": "Your rights",
           "marks": []
@@ -150,13 +166,13 @@
       ]
     },
     {
-      "_key": "e57113287c",
+      "_key": "356915a675",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "b2a6fec22c",
+          "_key": "36ccc3ee26",
           "_type": "span",
           "text": "If you believe personal data about you is processed in connection with this site, you may request access, correction or deletion under Chilean privacy law. Write to us through the channels listed on the Contact page.",
           "marks": []
@@ -164,13 +180,13 @@
       ]
     },
     {
-      "_key": "6b83487563",
+      "_key": "87b49ad3af",
       "_type": "block",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
-          "_key": "2b4e778548",
+          "_key": "1848aed8ab",
           "_type": "span",
           "text": "Changes",
           "marks": []
@@ -178,13 +194,13 @@
       ]
     },
     {
-      "_key": "b54fb860a9",
+      "_key": "b0fe6a5c3e",
       "_type": "block",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
-          "_key": "174f6a715e",
+          "_key": "6dd217cc02",
           "_type": "span",
           "text": "These policies may be updated. The date of the latest change appears at the top of this page.",
           "marks": []
@@ -197,6 +213,6 @@
     "metaDescription": "What information this site collects, how it is used and what rights you have."
   },
   "_review": [
-    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. No dice nada que no sea verificable en el código: sin formularios, cuentas, analítica ni cookies de seguimiento; localStorage solo guarda tema y vista de publicaciones."
+    "BORRADOR redactado por Claude: debe revisarlo el cliente (idealmente un abogado) antes de dar por final el texto. Verificable en el código: sin formularios, cuentas ni publicidad; GA4 (G-XZS2V3VY1Z) con Google Signals y personalización de anuncios desactivados, solo en carlosconca.cl; localStorage guarda tema y vista de publicaciones. Si se cambia la analítica, actualizar este texto."
   ]
 }
