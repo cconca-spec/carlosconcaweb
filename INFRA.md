@@ -100,8 +100,8 @@ el mismo servidor de Namecheap (198.54.119.207); los MX apuntan a `mx{1,2,3}-hos
 
 | Registro | Valor | En el cutover |
 |---|---|---|
-| `A` carlosconca.cl | 198.54.119.207 | **cambiar** al valor que muestre Vercel (suele ser `76.76.21.21`) |
-| `CNAME` www | carlosconca.cl | **cambiar** al valor que indique Vercel (p. ej. `cname.vercel-dns.com`) |
+| `A` carlosconca.cl | 198.54.119.207 | **cambiar** a `216.198.79.1` (valor de Vercel, 2026-11-03) |
+| `CNAME` www | carlosconca.cl | **cambiar** a `f5014c9608ad74dd.vercel-dns-017.com.` (valor de Vercel, 2026-11-03) |
 | `MX` ×3, `TXT` SPF, `default._domainkey` (DKIM), `_dmarc` | correo en Namecheap | **no tocar** |
 | `A` mail, webmail, cpanel, whm, ftp, webdisk, cpcontacts, cpcalendars, autoconfig, autodiscover | 198.54.119.207 | **no tocar** (siguen sirviendo correo y paneles) |
 | `SRV`/`TXT` _caldav(s), _carddav(s), _autodiscover | cPanel | **no tocar** |
@@ -118,11 +118,11 @@ correo saliente. Aun así, enviar un correo de prueba a una cuenta externa tras 
 - [ ] Decidir analítica: el sitio nuevo no tiene (GA4 o Vercel Analytics). Si se agrega, hacerlo antes del cambio y actualizar la política de privacidad.
 - [ ] Contenido visible al público: correo/ORCID de Carlos, publicación 198, revisión del texto legal por el cliente, imagen OG.
 - [ ] Confirmar que el build de `main` está en Ready y que el CI de GitHub (incluye `pnpm lhci`) pasa.
-- [ ] Bajar el TTL del `A` apex y del `CNAME` www de 14400 a **300 s** con 24 h de anticipación (mínimo 4 h).
+- [x] TTL del `A` apex y del `CNAME` www bajado de 14400 a **300 s** el 2026-11-03 (confirmado con `dig` en el servidor autoritativo). Esperar mínimo 4 h, idealmente 24 h, antes de cambiar los valores.
 - [ ] Avisar a Carlos del plan y del riesgo del correo (ver arriba).
 
 ### Día D (lo ejecuta quien tenga acceso a Vercel y al cPanel de Carlos)
-1. [ ] Vercel → proyecto → Settings → Domains: agregar `carlosconca.cl` (principal) y `www.carlosconca.cl` (redirige al apex). Copiar los valores exactos que pida.
+1. [x] Vercel → proyecto → Settings → Domains: `carlosconca.cl` y `www.carlosconca.cl` agregados el 2026-11-03. **El apex (`carlosconca.cl`) debe ser el dominio principal sin redirección, y `www` debe redirigir (308) al apex**: el canonical, el sitemap y lo indexado usan el apex. Vercel los dejó al revés por defecto; corregirlo antes del cambio.
 2. [ ] cPanel → Zone Editor: editar solo el `A` apex y el `CNAME` www con esos valores.
 3. [ ] Esperar propagación y certificado: `dig +short carlosconca.cl`, `curl -sI https://carlosconca.cl/`.
 4. [ ] **Webhook de Sanity**: cambiar su URL a `https://carlosconca.cl/api/revalidate/` (sanity.io/manage → API → Webhooks, id `lzsRqApprGGahRy9`).
