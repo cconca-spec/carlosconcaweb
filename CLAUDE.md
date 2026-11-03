@@ -166,8 +166,9 @@ pocas imágenes; no se usa Cloudinary ni loader custom. Decisión de 2026-10-05.
    (b) Contenido: revisión del texto legal por el cliente (borrador mío, y dice "escríbenos por Contacto" aunque Contacto no tiene correo),
    correo y ORCID, publicación 198, imagen OG, contador de "Publicaciones" de la home (¿dinámico?), logo FCFM en modo oscuro,
    categoría de "A robust modeling framework…" (JSON: Indexado; WP: WOS-ISI), bajadas del timeline EN sin traducir.
-   (c) Rendimiento y a11y: LCP medido en laboratorio móvil 2,0–3,7 s (objetivo < 1,2 s; la home es la peor, el LCP es la foto del hero);
-   el tope en `lighthouserc.cjs` es 4500 ms y debe bajar a medida que se optimice. `/publicaciones` falla `color-contrast` y `heading-order`.
+   (c) Rendimiento: LCP de laboratorio móvil 2,4–3,4 s en el sitio nuevo contra 2,9–10,1 s del WordPress (`docs/baseline/`). La home es la peor: 2,2 s de
+   render delay con la imagen ya precargada (CPU simulada, no bytes). El objetivo de 1,2 s hay que medirlo en campo (CrUX/GSC) tras el cutover; el tope de `lighthouserc.cjs` es 4500 ms.
+   Accesibilidad de `/publicaciones` corregida (contraste de chips en claro y oscuro, `h2` antes de las tarjetas).
    (d) Confirmar que el CI de GitHub (con `pnpm lhci`) pasa: solo se probó en local.
    (e) Tras el cutover: rotar el token de Sanity, comparar Core Web Vitals de campo, reenviar el sitemap.
    Verificación visual hecha solo con Chrome headless (modo oscuro del sistema, sin Safari/iOS ni

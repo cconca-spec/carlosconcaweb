@@ -20,6 +20,20 @@ con acceso de solo lectura. Son datos agregados, sin información personal. Comp
 - **Search Console no tiene ningún sitemap enviado.** Tras el cutover, enviar `https://carlosconca.cl/sitemap.xml`.
 - Las rutas `/cmd_sco`, `/config.inc.php`, `/journals` son escáneres: se ignoran.
 
+## Rendimiento del WordPress (Lighthouse móvil, 2026-11-03)
+`lighthouse-wordpress-movil.csv`: mediana de 3 corridas por URL, perfil móvil simulado (4G lento, CPU 4x), contra `https://carlosconca.cl`.
+Es una medición de laboratorio con Lighthouse local (el PageSpeed de Google dio 429 sin clave de API); no hay datos de campo (CrUX).
+
+| URL | WordPress | Sitio nuevo (Vercel) |
+|---|---|---|
+| `/` | LCP 10,1 s · perf 64 | LCP ≈ 3,0–3,4 s · perf 91 |
+| `/publicaciones/` | LCP 6,8 s · CLS 0,22 · perf 58 | LCP ≈ 2,4–2,7 s · CLS 0 · perf 96–98 |
+| `/investigacion/` | LCP 3,2 s · CLS 0,07 · perf 84 | LCP ≈ 2,7 s · CLS 0 · perf 96 |
+
+Mediana de los LCP del WordPress en las 12 URLs: 4,9 s (rango 2,9–10,1 s); SEO 92 y accesibilidad 94–100 en todas.
+En el sitio nuevo el LCP de la home es 2,2 s de *render delay* (la imagen del hero ya se precarga y pesa unos 73 KB en móvil): es CPU del móvil simulado, no
+bytes. El objetivo de 1,2 s no es alcanzable en este perfil de laboratorio; conviene medirlo con datos de campo (CrUX/Search Console) a las semanas del cutover.
+
 ## Cómo compararlo después
 Misma propiedad GA4 (el sitio nuevo usa el mismo ID, así la serie no se corta). A las 2, 4 y 8 semanas del cutover: usuarios y sesiones
 mensuales, clics y posición de las 12 URLs en GSC, y la consulta "carlos conca". Una caída sostenida de clics en `/` o `/biografia/`

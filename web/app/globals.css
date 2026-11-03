@@ -39,9 +39,9 @@
 
   /* Chips de categoría de publicaciones. */
   --cat-wos: #3452c9;
-  --cat-indexado: #1f7a4d;
-  --cat-actas: #a06a00;
-  --cat-nacional: #b3402e;
+  --cat-indexado: #1d7348;
+  --cat-actas: #8d5d00;
+  --cat-nacional: #af3f2d;
   --cat-otras: #5b5b5b;
   --cat-libro: #7a3fb0;
 
@@ -62,22 +62,22 @@
     --fg: #f7f7f7;
     --accent: #f7f7f7;
     --border: color-mix(in srgb, #f7f7f7 35%, transparent);
-    --cat-wos: #8fa4ff;
+    --cat-wos: #aebdff;
     --cat-indexado: #6fd3a0;
     --cat-actas: #f0c04a;
-    --cat-nacional: #ff9b88;
-    --cat-otras: #bdbdbd;
-    --cat-libro: #c9a0f0;
+    --cat-nacional: #ffab9b;
+    --cat-otras: #c0c0c0;
+    --cat-libro: #d4b3f3;
     color-scheme: dark;
   }
 }
 .dark {
-  --cat-wos: #8fa4ff;
+  --cat-wos: #aebdff;
   --cat-indexado: #6fd3a0;
   --cat-actas: #f0c04a;
-  --cat-nacional: #ff9b88;
-  --cat-otras: #bdbdbd;
-  --cat-libro: #c9a0f0;
+  --cat-nacional: #ffab9b;
+  --cat-otras: #c0c0c0;
+  --cat-libro: #d4b3f3;
   --bg: #1c1c1c;
   --panel: #393939;
   --card: #393939;

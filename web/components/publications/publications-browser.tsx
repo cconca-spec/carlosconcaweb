@@ -263,6 +263,7 @@ export function PublicationsBrowser({ items }: { items: Publication[] }) {
 
       {results.length === 0 && <p className="mt-10 text-lg">{t('empty')}</p>}
 
+      <h2 className="sr-only">{t('listTitle')}</h2>
       <ul
         className={cn(
           'mt-4 grid gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4',
